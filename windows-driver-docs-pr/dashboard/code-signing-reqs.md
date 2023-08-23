@@ -21,6 +21,7 @@ For more extensive information on driver signing requirements see the following 
 
 Code signing certificates can be purchased from one of the following certificate authorities:
 
+- [Certera code signing certificate](https://certera.com/code-signing/certera-code-signing)
 - [DigiCert code signing certificate](https://www.digicert.com/order/order-1.php)
 - [Entrust code signing certificate](https://www.entrustdatacard.com/products/digital-signing-certificates/code-signing-certificates)
 - [GlobalSign code signing certificate](https://go.microsoft.com/fwlink/p/?LinkId=620888)
