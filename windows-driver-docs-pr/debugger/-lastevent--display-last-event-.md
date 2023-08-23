@@ -5,6 +5,7 @@ keywords: [".lastevent (Display Last Event) Windows Debugging"]
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - .lastevent (Display Last Event)
 api_type:
@@ -54,7 +55,7 @@ For more information about exceptions and events, see [Controlling Exceptions an
 
 ## Remarks
 
-Breaking into the debugger always creates an exception. There is always a *last event* when the debugger accepted command input. If you break into the debugger by using [**CTRL+C**](ctrl-c--break-.md), [CTRL+BREAK](debug---break.md), or Debug | Break, an exception code of 0x80000003 is created.
+Breaking into the debugger always creates an exception. There is always a *last event* when the debugger accepted command input. If you break into the debugger by using [**CTRL+C**](ctrl-c--break-.md), **CTRL+BREAK**, or Debug | Break, an exception code of 0x80000003 is created.
 
  
 

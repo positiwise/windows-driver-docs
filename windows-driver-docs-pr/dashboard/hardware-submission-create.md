@@ -22,10 +22,11 @@ All hardware submissions to the dashboard will be processed within 5 business da
     
     | Operating system | Required signed file type | Guidance|
     |--------------------|--------------------------|---------------|
-    | Windows 11, Windows 10, and Windows Server versions beginning with Windows Server 2016 | A Windows Hardware Lab kit *.hlk* file | [Find and download the correct version of the HLK](/windows-hardware/test/hlk/) based on the compatible system. </br></br>**Note:** The Windows 10 version 22H2 release won't bring updates to the Windows Hardware Compatibility Program (WHCP) and will follow the same guidelines as Windows 10, version 2004. For more information, see [WHCP guidance for Windows 10, version 22H2](https://techcommunity.microsoft.com/t5/windows-hardware-certification/whcp-guidance-for-windows-10-version-22h2/ba-p/3586362). |
+    | Windows 11, Windows 10, and Windows Server versions beginning with Windows Server 2016 | A Windows Hardware Lab kit *.hlk* file | [Find and download the correct version of the HLK](/windows-hardware/test/hlk/) based on the compatible system. You can then [merge all HLK test results](/windows-hardware/test/hlk/user/merge-packages) into a single dashboard submission.</br></br>**Note:** The Windows 10 version 22H2 release won't bring updates to the Windows Hardware Compatibility Program (WHCP) and will follow the same guidelines as Windows 10, version 2004. For more information, see [WHCP guidance for Windows 10, version 22H2](https://techcommunity.microsoft.com/t5/windows-hardware-certification/whcp-guidance-for-windows-10-version-22h2/ba-p/3586362). |
     | Windows 8/8.1 and older | A Windows Hardware Certification Kit *.hckx* file | To learn how to create and digitally sign an  *.hckx* file, see the [Windows HCK Getting Started Guide](/previous-versions/windows/hardware/hck/jj123537(v=vs.85)) |
     | Windows Server 2008 and older  | A WLK hardware submission package *.cab* file | To learn how to create a WLK submission package, see [Create a new WLK hardware submission](hardware-submission-wlk.md). |
     
+
 
 ## Submit your new hardware
 
@@ -114,6 +115,10 @@ Your error message is:
 
 Use [HLK studio](/windows-hardware/test/hlk/user/install-standalone-hlk-studio) to open the downloaded DUA shell package and to create DUA submission.
 
+**Other issues**
+
+If you don't see your issue addressed here, go to [Get support for Partner Center dashboard issues](hardware-submission-support.md).
+
 ## Next Steps
 
 > [!div class="nextstepaction"]
@@ -121,6 +126,9 @@ Use [HLK studio](/windows-hardware/test/hlk/user/install-standalone-hlk-studio) 
 
 > [!div class="nextstepaction"]
 > [Update a hardware submission](hardware-submission-update.md)
+
+> [!div class="nextstepaction"]
+> [Validate a hardware submission signature](code-signing-validate.md)
 
 > [!div class="nextstepaction"]
 > [Windows HLK Getting Started Guide](/windows-hardware/test/hlk/getstarted/windows-hlk-getting-started)

@@ -1,4 +1,4 @@
-- name: "Design Guides"
+- name: "Display driver design guides"
   href: index.md
 - name: "Windows Display Driver Model (WDDM) design guide"
 # Auto-expanded node
@@ -7,6 +7,19 @@
     href: windows-vista-display-driver-model-design-guide.md
   - name: "Roadmap for the Windows Display Driver Model (WDDM)"
     href: roadmap-for-developing-drivers-for-the-windows-vista-display-driver-mo.md
+  - name: "Windows Display Driver Model (WDDM)"
+# Auto-expanded node
+    items: 
+    - name: "Introduction to WDDM"
+      href: introduction-to-the-windows-vista-and-later-display-driver-model.md
+    - name: "WDDM architecture"
+      href: windows-vista-and-later-display-driver-model-architecture.md
+    - name: "WDDM operation flow"
+      href: windows-vista-and-later-display-driver-model-operation-flow.md
+    - name: "Benefits of WDDM"
+      href: benefits-of-the-windows-vista-and-later-display-driver-model.md
+    - name: "Migrating to WDDM"
+      href: migrating-to-the-windows-vista-and-later-display-driver-model.md
   - name: "What's new for Windows display and graphics drivers"
 # Auto-expanded node
     items:
@@ -22,12 +35,22 @@
       href: what-s-new-for-windows-8-display-drivers.md
     - name: "What's new for Windows 7 display drivers (WDDM 1.1)"
       href: what-s-new-for-windows-7-display-drivers--wddm-1-1-.md
+  - name: "WDDM 3.1 features"
+    items:
+    - name: "Sharing the backing store with KMD"
+      href: sharing-backing-store-with-kmd.md
   - name: "WDDM 3.0 features"
     items:
     - name: "D3D12 video encoding"
       href: video-encoding-d3d12.md
+    - name: "Enhanced barriers"
+      href: enhanced-barriers.md
+    - name: "Hardware flip queue"
+      href: hardware-flip-queue.md
     - name: "IOMMU DMA remapping"
       href: iommu-dma-remapping.md
+    - name: "Signaling a CPU event from KMD"
+      href: signaling-cpu-event-from-kmd.md
   - name: "WDDM 2.4 features"
     items:
     - name: "IOMMU-based GPU isolation"
@@ -186,19 +209,6 @@
         href: wddm-driver-and-feature-caps.md
       - name: "WDDM 1.2 best practices"
         href: wddm-v1-2-best-practices.md
-  - name: "Introduction to the Windows Display Driver Model (WDDM)"
-# Auto-expanded node
-    items: 
-    - name: "Introduction to the Windows Display Driver Model (WDDM)"
-      href: introduction-to-the-windows-vista-and-later-display-driver-model.md
-    - name: "Windows Display Driver Model (WDDM) Architecture"
-      href: windows-vista-and-later-display-driver-model-architecture.md
-    - name: "Benefits of the Windows Display Driver Model (WDDM)"
-      href: benefits-of-the-windows-vista-and-later-display-driver-model.md
-    - name: "Migrating to the Windows Display Driver Model (WDDM)"
-      href: migrating-to-the-windows-vista-and-later-display-driver-model.md
-    - name: "Windows Display Driver Model (WDDM) Operation Flow"
-      href: windows-vista-and-later-display-driver-model-operation-flow.md
   - name: "Installation Requirements for Display Miniport and User-Mode Display Drivers"
 # Auto-expanded node
     items: 
@@ -756,6 +766,14 @@
       href: user-mode-driver-logging.md
     - name: "Disabling Frame Pointer Omission (FPO) optimization"
       href: disabling-frame-pointer-omission--fpo--optimization.md
+  - name: "Microsoft Compute Driver Model"
+    items:
+    - name: "Microsoft Compute Driver Model overview"
+      href: mcdm.md
+    - name: "MCDM architecture"
+      href: mcdm-architecture.md
+    - name: "MCDM KM driver implementation guidelines" 
+      href: mcdm-implementation-guidelines.md
     - name: "GPUView"
 # Auto-expanded node
       items:
@@ -906,6 +924,8 @@
       href: supplying-fence-identifiers.md
     - name: "Handling Resource Creation and Destruction"
       href: handling-resource-creation-and-destruction.md
+    - name: "D3D10DDIRESOURCE_TYPE"
+      href: ne-d3d10umddi-d3d10ddiresource_type.md
     - name: "Supporting brightness controls for external display connectors"
       href: supporting-brightness-controls-for-external-display-connectors.md
     - name: "Container support for non-DX APIs"
@@ -1123,6 +1143,8 @@
           href: source-parameter-token.md
         - name: "Version Token"
           href: version-token.md
+      - name: "DP4 Instruction"
+        href: dp4-instruction.md
     - name: "Adaptive refresh for playing 24 fps video content"
       href: adaptive-refresh-for-playing-24-fps-content.md
     - name: "GPU power management of idle states and active power"
@@ -1733,6 +1755,53 @@
             href: notify-callback-functions-in-a-video-capture-driver.md
           - name: "Video VBI Capture"
             href: video-vbi-capture.md
+        - name: "DxApi Function Identifiers"
+# Auto-expanded node
+          items: 
+          - name: "DD_DXAPI_ADDVPCAPTUREBUFFER"
+            href: dd-dxapi-addvpcapturebuffer.md
+          - name: "DD_DXAPI_CLOSEHANDLE"
+            href: dd-dxapi-closehandle.md
+          - name: "DD_DXAPI_FLIP_OVERLAY"
+            href: dd-dxapi-flip-overlay.md
+          - name: "DD_DXAPI_FLIP_VP"
+            href: dd-dxapi-flip-vp.md
+          - name: "DD_DXAPI_FLUSHVPCAPTUREBUFFERS"
+            href: dd-dxapi-flushvpcapturebuffers.md
+          - name: "DD_DXAPI_GET_CURRENT_VP_AUTOFLIP_SURFACE"
+            href: dd-dxapi-get-current-vp-autoflip-surface.md
+          - name: "DD_DXAPI_GET_LAST_VP_AUTOFLIP_SURFACE"
+            href: dd-dxapi-get-last-vp-autoflip-surface.md
+          - name: "DD_DXAPI_GET_POLARITY"
+            href: dd-dxapi-get-polarity.md
+          - name: "DD_DXAPI_GET_SURFACE_STATE"
+            href: dd-dxapi-get-surface-state.md
+          - name: "DD_DXAPI_GET_VP_FIELD_NUMBER"
+            href: dd-dxapi-get-vp-field-number.md
+          - name: "DD_DXAPI_GETKERNELCAPS"
+            href: dd-dxapi-getkernelcaps.md
+          - name: "DD_DXAPI_GETVERSIONNUMBER"
+            href: dd-dxapi-getversionnumber.md
+          - name: "DD_DXAPI_LOCK"
+            href: dd-dxapi-lock.md
+          - name: "DD_DXAPI_OPENDIRECTDRAW"
+            href: dd-dxapi-opendirectdraw.md
+          - name: "DD_DXAPI_OPENSURFACE"
+            href: dd-dxapi-opensurface.md
+          - name: "DD_DXAPI_OPENVIDEOPORT"
+            href: dd-dxapi-openvideoport.md
+          - name: "DD_DXAPI_OPENVPCAPTUREDEVICE"
+            href: dd-dxapi-openvpcapturedevice.md
+          - name: "DD_DXAPI_REGISTER_CALLBACK"
+            href: dd-dxapi-register-callback.md
+          - name: "DD_DXAPI_SET_SURFACE_STATE"
+            href: dd-dxapi-set-surface-state.md
+          - name: "DD_DXAPI_SET_VP_FIELD_NUMBER"
+            href: dd-dxapi-set-vp-field-number.md
+          - name: "DD_DXAPI_SET_VP_SKIP_FIELD"
+            href: dd-dxapi-set-vp-skip-field.md
+          - name: "DD_DXAPI_UNREGISTER_CALLBACK"
+            href: dd-dxapi-unregister-callback.md
     - name: "Extended Surface Alignment"
 # Auto-expanded node
       items: 

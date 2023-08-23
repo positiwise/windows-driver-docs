@@ -10,7 +10,7 @@ keywords:
 - Audio Settings, Audio Notifications
 - Windows 11 audio 
 - CAPX, Core Audio Processing Object Extensions
-ms.date: 07/08/2022
+ms.date: 08/11/2023
 ---
 
 # Windows 11 APIs for Audio Processing Objects
@@ -46,7 +46,7 @@ The latest versions of Windows, the WDK, and the SDK can be downloaded below thr
 
 Windows 11 WHCP Content has been updated to provide partners the means to validate these APIs. 
 
-The sample code for the content outlined in this topic can be found here: [Audio/SYSVAD/APO - github](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/)
+The sample code for the content outlined in this topic can be found here: [Audio/SYSVAD/APO - github](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/)
 
 ## Acoustic Echo Cancellation (AEC)
 
@@ -85,7 +85,7 @@ An APO can examine the APO_CONNECTION_PROPERTY.u32Signature field to determine w
 APO_CONNECTION_PROPERTY_SIGNATURE, while APO_CONNECTION_PROPERTY_V2 have a signature that equals APO_CONNECTION_PROPERTY_V2_SIGNATURE.
 If the signature has a value that equals APO_CONNECTION_PROPERTY_V2_SIGNATURE, the pointer to the APO_CONNECTION_PROPERTY structure may be safely typecast to an APO_CONNECTION_PROPERTY_V2 pointer.
 
-The following code is from the [Aec APO MFX sample - AecApoMfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/AecApo/AecApoMfx.cpp) and shows the recasting.
+The following code is from the [Aec APO MFX sample - AecApoMfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/AecApo/AecApoMfx.cpp) and shows the recasting.
 
 ```cpp
     if (ppInputConnections[0]->u32Signature == APO_CONNECTION_PROPERTY_V2_SIGNATURE)
@@ -134,11 +134,11 @@ For more information, find additional information on the following pages.
 
 Refer to the following Sysvad Audio AecApo code samples. 
 
-- [Aec APO sample header - AecAPO.h](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/AecApo/AecApo.h)
+- [Aec APO sample header - AecAPO.h](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/AecApo/AecApo.h)
 
-- [Aec APO MFX sample - AecApoMfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/AecApo/AecApoMfx.cpp)
+- [Aec APO MFX sample - AecApoMfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/AecApo/AecApoMfx.cpp)
 
-The following code from the [Aec APO sample header-  AecAPO.h](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/AecApo/AecApo.h) shows the three new public methods being added. 
+The following code from the [Aec APO sample header-  AecAPO.h](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/AecApo/AecApo.h) shows the three new public methods being added. 
 
 ```cpp
  public IApoAcousticEchoCancellation,
@@ -187,7 +187,7 @@ The following code from the [Aec APO sample header-  AecAPO.h](https://github.co
 
 ```
 
-The following code is from the [Aec APO MFX sample - AecApoMfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/AecApo/AecApoMfx.cpp) and shows the implementation of AddAuxiliaryInput, when the APO can only handle one auxiliary input.
+The following code is from the [Aec APO MFX sample - AecApoMfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/AecApo/AecApoMfx.cpp) and shows the implementation of AddAuxiliaryInput, when the APO can only handle one auxiliary input.
 
 
 ```cpp
@@ -248,6 +248,97 @@ This is the recommended buffer behavior for AEC.
 - Buffers obtained in the call to IApoAuxiliaryInputRT::AcceptInput should be written to a circular buffer without locking the main thread.
 - On the call to IAudioProcessingObjectRT::APOProcess, the circular buffer should be read for the latest audio packet from the reference stream, and this packet should be used for running through the echo cancellation algorithm.
 - Timestamps on the reference and microphone data may be used to line up the speaker and mic data.
+
+## Reference Loopback Stream
+
+By default, the loopback stream "taps into" (listens to) the audio stream prior to any volume or muting being applied.  A loopback stream tapped before volume has been applied is known as a pre-volume loopback stream.  An advantage of having a pre-volume loopback stream is a clear and uniform audio stream, regardless of the current volume setting.
+
+Some AEC algorithms may prefer obtaining a loopback stream that has been connected after any volume processing (including being muted).  This configuration is known as post-volume loopback.
+
+In the next major version of Windows AEC APOs can request post-volume loopback on supported endpoints.
+
+### Limitations
+
+Unlike pre-volume loopback streams, which are available for all render endpoints, post-volume loopback streams may not be available on all endpoints.
+
+### Requesting Post-Volume Loopback
+
+AEC APOs that wish to use post-volume loopback should implement the [IApoAcousticEchoCancellation2](/windows/win32/api/audioenginebaseapo/nn-audioenginebaseapo-iapoacousticechocancellation2) interface.
+
+An AEC APO can request post-volume loopback by returning the **APO_REFERENCE_STREAM_PROPERTIES_POST_VOLUME_LOOPBACK** flag via the Properties parameter in its implementation of [IApoAcousticEchoCancellation2::GetDesiredReferenceStreamProperties](/windows/win32/api/audioenginebaseapo/nf-audioenginebaseapo-iapoacousticechocancellation2-getdesiredreferencestreamproperties).
+
+Depending on the render endpoint currently being used, post-volume loopback may not be available.  An AEC APO is notified if post-volume loopback is being used when its [IApoAuxiliaryInputConfiguration::AddAuxiliaryInput](/windows/win32/api/audioenginebaseapo/nf-audioenginebaseapo-iapoauxiliaryinputconfiguration-addauxiliaryinput) method is called. If the [AcousticEchoCanceller_Reference_Input](/windows/win32/api/audioengineextensionapo/ns-audioengineextensionapo-acousticechocanceller_reference_input) streamProperties field contains **APO_REFERENCE_STREAM_PROPERTIES_POST_VOLUME_LOOPBACK**, post-volume loopback is in use.
+
+The following code from the AEC APO sample header- AecAPO.h shows the three new public methods being added.
+
+```cpp
+public:
+  // IApoAcousticEchoCancellation2
+  STDMETHOD(GetDesiredReferenceStreamProperties)(
+    _Out_ APO_REFERENCE_STREAM_PROPERTIES * properties) override;
+
+  // IApoAuxiliaryInputConfiguration
+  STDMETHOD(AddAuxiliaryInput)(
+    DWORD dwInputId,
+    UINT32 cbDataSize,
+    _In_ BYTE* pbyData,
+    _In_ APO_CONNECTION_DESCRIPTOR *pInputConnection
+    ) override;
+```
+
+The following code snippet is from the AEC APO MFX sample - AecApoMfx.cpp and shows the implementation of GetDesiredReferenceStreamProperties, and relevant portion of AddAuxiliaryInput.
+
+```cpp
+STDMETHODIMP SampleApo::GetDesiredReferenceStreamProperties(
+  _Out_ APO_REFERENCE_STREAM_PROPERTIES * properties)
+{
+  RETURN_HR_IF_NULL(E_INVALIDARG, properties);
+
+  // Always request that a post-volume loopback stream be used, if
+  // available. We will find out which type of stream was actually
+  // created when AddAuxiliaryInput is invoked.
+  *properties = APO_REFERENCE_STREAM_PROPERTIES_POST_VOLUME_LOOPBACK;
+  return S_OK;
+}
+
+STDMETHODIMP
+CAecApoMFX::AddAuxiliaryInput(
+    DWORD dwInputId,
+    UINT32 cbDataSize,
+    BYTE *pbyData,
+    APO_CONNECTION_DESCRIPTOR * pInputConnection
+)
+{
+   // Parameter checking skipped for brevity, please see sample for 
+   // full implementation.
+
+  AcousticEchoCanceller_Reference_Input* referenceInput = nullptr;
+  APOInitSystemEffects3* papoSysFxInit3 = nullptr;
+
+  if (cbDataSize == sizeof(AcousticEchoCanceller_Reference_Input))
+  {
+    referenceInput = 
+      reinterpret_cast<AcousticEchoCanceller_Reference_Input*>(pbyData);
+
+    if (WI_IsFlagSet(
+          referenceInput->streamProperties,
+          APO_REFERENCE_STREAM_PROPERTIES_POST_VOLUME_LOOPBACK))
+    {
+      // Post-volume loopback is being used.
+      m_bUsingPostVolumeLoopback = TRUE;
+        
+      // Note that we can get to the APOInitSystemEffects3 from     
+      // AcousticEchoCanceller_Reference_Input.
+      papoSysFxInit3 = (APOInitSystemEffects3*)pbyData;
+    }
+    else  if (cbDataSize == sizeof(APOInitSystemEffects3))
+    {
+      // Post-volume loopback is not supported.
+      papoSysFxInit3 = (APOInitSystemEffects3*)pbyData;
+    }
+
+    // Remainder of method skipped for brevity.
+```
 
 ## Settings Framework
 
@@ -614,7 +705,7 @@ STDMETHODIMP PropertyChangeNotificationClient::OnPropertyChanged(AUDIO_SYSTEMEFF
 
 ### Sample code - Settings Framework
 
-This sample code is from the sysvad [SFX Swap APO sample - SwapAPOSFX.cpp](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/SwapAPO/swapaposfx.cpp#L300-L329).
+This sample code is from the sysvad [SFX Swap APO sample - SwapAPOSFX.cpp](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/SwapAPO/swapaposfx.cpp#L300-L329).
 
 ```cpp
 // SampleApo supports the new IAudioSystemEffects3 interface so it will receive APOInitSystemEffects3
@@ -845,7 +936,7 @@ STDMETHODIMP_(void) SampleApo::HandleNotification(_In_ APO_NOTIFICATION* apoNoti
 }
 ```
 
-The following code is from the [Swap APO MFX sample - swapapomfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/SwapAPO/swapapomfx.cpp#L770-L794) and shows registering for events, by returning an array of APO_NOTIFICATION_DESCRIPTORs.
+The following code is from the [Swap APO MFX sample - swapapomfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/SwapAPO/swapapomfx.cpp#L770-L794) and shows registering for events, by returning an array of APO_NOTIFICATION_DESCRIPTORs.
 
 ```cpp
 HRESULT CSwapAPOMFX::GetApoNotificationRegistrationInfo(_Out_writes_(*count) APO_NOTIFICATION_DESCRIPTOR **apoNotifications, _Out_ DWORD *count)
@@ -875,7 +966,7 @@ HRESULT CSwapAPOMFX::GetApoNotificationRegistrationInfo(_Out_writes_(*count) APO
 }
 ```
 
-The following code is from the [SwapAPO MFX HandleNotifications sample - swapapomfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/SwapAPO/swapapomfx.cpp#L796-L827) and shows how to handle notifications. 
+The following code is from the [SwapAPO MFX HandleNotifications sample - swapapomfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/SwapAPO/swapapomfx.cpp#L796-L827) and shows how to handle notifications. 
 
 ```cpp
 void CSwapAPOMFX::HandleNotification(APO_NOTIFICATION *apoNotification)
@@ -924,7 +1015,9 @@ IMPLEMENT_TRACELOGGING_CLASS(ApoTelemetryProvider, "Microsoft.Windows.Audio.ApoT
     (0x8b4a0b51, 0x5dcf, 0x5a9c, 0x28, 0x17, 0x95, 0xd0, 0xec, 0x87, 0x6a, 0x87));
 ``` 
 
-Each APO has its own activity ID. The trace logging events are not marked as telemetry. Registry settings are available to log events to a file for use during development of an APO. Since this does not use the existing trace logging mechanism, existing console tools can be used to filter for these events and display them in real-time.
+Each APO has its own activity ID. Since this uses the existing trace logging mechanism, existing console tools can be used to filter for these events and display them in real-time.  You can use existing tools like tracelog and tracefmt as described in [Tools for Software Tracing - Windows drivers](../devtest/tools-for-software-tracing.md). For more information on trace sessions, see [Creating a Trace Session with a Control GUID](../devtest/creating-a-trace-session-with-a-control-guid.md).
+
+The trace logging events are not marked as telemetry and will not be displayed as a telemetry provider in tools such as xperf.
 
 ### Implementation - Logging Framework
 
@@ -940,7 +1033,7 @@ For more information, see [IAudioProcessingObjectLoggingService](/windows/win32/
 
 The sample demonstrates the use of the method IAudioProcessingObjectLoggingService::ApoLog and how this interface pointer is obtained in IAudioProcessingObject::Initialize.
 
-[AecApoMfx Logging Example](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/AecApo/AecApoMfx.cpp#L306-L310).
+[AecApoMfx Logging Example](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/AecApo/AecApoMfx.cpp#L306-L310).
 
 
 
@@ -1116,9 +1209,9 @@ STDMETHODIMP SampleApo3AsyncCallback::Invoke(_In_ IRtwqAsyncResult* asyncResult)
 ```
 
 For more examples of how to utilize this interface, please see the following sample code:
-- [SwapAPO SwapMFXApoAsyncCallback Class Definition - Example](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/SwapAPO/SwapAPO.h#L48-L75)
-- [SwapAPO Invoke Function - Example](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/SwapAPO/swapapomfx.cpp#L124-L141)
-- [SwapAPO Create Async Callback - Example](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/SwapAPO/swapapomfx.cpp#L347-L366)
+- [SwapAPO SwapMFXApoAsyncCallback Class Definition - Example](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/SwapAPO/SwapAPO.h#L48-L75)
+- [SwapAPO Invoke Function - Example](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/SwapAPO/swapapomfx.cpp#L124-L141)
+- [SwapAPO Create Async Callback - Example](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/SwapAPO/swapapomfx.cpp#L347-L366)
 
 
 ## Audio Effects Discovery and Control for Effects
@@ -1137,9 +1230,9 @@ An APO needs to implement the [IAudioSystemEffects3](/windows/win32/api/audioeng
 
 ### Sample code - Audio Effect Discovery
 
-The Audio Effect Discovery sample code can be found within the [SwapAPOSFX sample - swapaposfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/SwapAPO/swapaposfx.cpp). 
+The Audio Effect Discovery sample code can be found within the [SwapAPOSFX sample - swapaposfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/SwapAPO/swapaposfx.cpp). 
 
-The following sample code illustrates how to retrieve the list of configurable effects. [GetControllableSystemEffectsList sample - swapaposfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/SwapAPO/swapaposfx.cpp#L583-L625)
+The following sample code illustrates how to retrieve the list of configurable effects. [GetControllableSystemEffectsList sample - swapaposfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/SwapAPO/swapaposfx.cpp#L583-L625)
 
 ```cpp
 HRESULT CSwapAPOSFX::GetControllableSystemEffectsList(_Outptr_result_buffer_maybenull_(*numEffects) AUDIO_SYSTEMEFFECT** effects, _Out_ UINT* numEffects, _In_opt_ HANDLE event)
@@ -1187,7 +1280,7 @@ HRESULT CSwapAPOSFX::GetControllableSystemEffectsList(_Outptr_result_buffer_mayb
 }
 ```
 
-The following sample code illustrates how to enable and disable effects. [SetAudioSystemEffectState sample - swapaposfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/master/audio/sysvad/APO/SwapAPO/swapaposfx.cpp#L627-L653)
+The following sample code illustrates how to enable and disable effects. [SetAudioSystemEffectState sample - swapaposfx.cpp](https://github.com/microsoft/Windows-driver-samples/blob/main/audio/sysvad/APO/SwapAPO/swapaposfx.cpp#L627-L653)
 
 ```cpp
 HRESULT CSwapAPOSFX::SetAudioSystemEffectState(GUID effectId, AUDIO_SYSTEMEFFECT_STATE state)

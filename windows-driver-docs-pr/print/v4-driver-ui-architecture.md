@@ -1,10 +1,12 @@
 ---
 title: V4 Driver UI Architecture
 description: A high level design goal for the v4 driver architecture was to provide built-in support for the Microsoft Store app user interface.
-ms.date: 08/30/2021
+ms.date: 01/25/2023
 ---
 
 # V4 Driver UI Architecture
+
+[!include[Print Support Apps](../includes/print-support-apps.md)]
 
 A high level design goal for the v4 driver architecture was to provide built-in support for the Microsoft Store app user interface.
 
@@ -12,7 +14,7 @@ The application-based UI paradigm that is employed is a clear example of this. U
 
 Printer extension apps support print preferences and printer notifications when users run existing applications on the Windows desktop. While the UIs for these applications are very different, with one tailored for touch and the other optimized for mouse and keyboard users, the business logic and the connection to v4 print drivers can still be similar, regardless of the UI.
 
-The following diagram shows a high level architecture of the Microsoft Store device apps for the [v4 Print driver and printer extension samples](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples) that are provided on GitHub.
+The following diagram shows a high level architecture of the Microsoft Store device apps for the [v4 Print driver and printer extension samples](https://github.com/Microsoft/Windows-driver-samples/tree/main/print/v4PrintDriverSamples) that are provided on GitHub.
 
 ![overview of custom ui architecture.](images/v4custuiarch.png)
 
@@ -64,4 +66,4 @@ Printer extensions need to be built in such a way that they can gracefully degra
 
 [Printer Extension Interfaces](/windows-hardware/drivers/ddi/printerextension/#interfaces)
 
-[v4 Print driver samples on GitHub](https://github.com/Microsoft/Windows-driver-samples/tree/master/print/v4PrintDriverSamples)
+[v4 Print driver samples on GitHub](https://github.com/Microsoft/Windows-driver-samples/tree/main/print/v4PrintDriverSamples)

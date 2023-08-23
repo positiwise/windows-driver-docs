@@ -5,6 +5,7 @@ keywords: ["Bug Check 0xA5 ACPI_BIOS_ERROR", "ACPI_BIOS_ERROR"]
 ms.date: 09/12/2019
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - ACPI_BIOS_ERROR
 api_type:
@@ -16,7 +17,7 @@ api_type:
 The ACPI\_BIOS\_ERROR bug check has a value of 0x000000A5. This bug check indicates that the Advanced Configuration and Power Interface (ACPI) BIOS of the computer is not fully compliant with the ACPI specification.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## ACPI\_BIOS\_ERROR Parameters
@@ -596,7 +597,9 @@ A PCI routing table (\_PRT) is the ACPI BIOS object that specifies how all the P
 You can display a \_PRT in the debugger by using the **!acpikd.nsobj** extension together with the address of the \_PRT object as its argument.
 
  
+ ## See Also
 
+[Bug Check Code Reference](bug-check-code-reference2.md)
  
 
 

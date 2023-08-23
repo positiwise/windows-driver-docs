@@ -806,14 +806,14 @@ This method is also available.
 
 | **Method Name**   | **Signature**             | **Description**                                                                                               |
 |-------------------|---------------------------|---------------------------------------------------------------------------------------------------------------|
-| compareTo | .compareTo(str:string) | Compares two strings. |
+| compareTo | .compareTo(value) | Compares the 64-bit value to another 64-bit value. |
 
 ## <span id="Debugging"></span><span id="debugging"></span><span id="DEBUGGING"></span>JavaScript Debugging
 
 This section describes how to use the script debugging capabilities of the debugger. The debugger has integrated support for debugging JavaScript scripts using the [.scriptdebug (Debug JavaScript)](-scriptdebug--debug-javascript-.md) command.
 
 >[!NOTE]
-> To use JavaScript Debugging with WinDbg Preview, run the debugger as Administrator.
+> To use JavaScript Debugging with WinDb, run the debugger as Administrator.
 >
 
 Use this sample code to explore debugging a JavaScript. For this walkthrough, we will name it DebuggableSample.js and save it in the C:\MyScripts directory.
@@ -1173,7 +1173,7 @@ The following are JavaScript resources that may be useful as you develop JavaScr
 
 -   [ECMAScript 6 — New Features: Overview & Comparison](http://es6-features.org/)
 
-## <span id="related_topics"></span>Related topics
+## <span id="related_topics"></span>See also
 
 
 [JavaScript Debugger Example Scripts](javascript-debugger-example-scripts.md)

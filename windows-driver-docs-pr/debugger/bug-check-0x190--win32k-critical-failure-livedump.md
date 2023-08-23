@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x190 WIN32K_CRITICAL_FAILURE_LIVEDUMP", "WIN32K_CRITICAL_
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - WIN32K_CRITICAL_FAILURE_LIVEDUMP
 api_type:
@@ -62,7 +63,11 @@ The WIN32K\_CRITICAL\_FAILURE\_LIVEDUMP live dump has a value of 0x00000190. Thi
 
  
 
- 
+## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
+
+[Bug Check Code Reference](bug-check-code-reference2.md) 
 
  
 

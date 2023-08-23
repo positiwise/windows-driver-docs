@@ -1,7 +1,7 @@
 ---
 title: Microsoft ASL compiler
 description: Version 5.0 of the Microsoft ASL compiler supports the features in the ACPI 5.0 specification.
-ms.date: 12/17/2020
+ms.date: 03/23/2023
 ---
 
 # Microsoft ASL compiler
@@ -10,7 +10,9 @@ Version 5.0 of the Microsoft ACPI source language (ASL) compiler supports the fe
 
 [**Download the Windows Driver Kit (WDK)**](../download-the-wdk.md)
 
-The ASL compiler (asl.exe) is located in the Tools\\arm\\ACPIVerify, Tools\\arm64\\ACPIVerify, Tools\\x86\\ACPIVerify, and Tools\\x64\\ACPIVerify directories of the installed WDK, for example, C:\Program Files (x86)\Windows Kits\10\Tools\x86\ACPIVerify.
+The ASL compiler (asl.exe) is located in the Tools\\arm\\ACPIVerify, Tools\\arm64\\ACPIVerify, Tools\\x86\\ACPIVerify, and Tools\\x64\\ACPIVerify directories of the installed WDK, for example, `C:\Program Files (x86)\Windows Kits\10\Tools\<build #>\<build architecture>\ACPIVerify`.
+
+Note that you need first install the SDK, followed by the WDK. The build numbers for the two kits must match.
 
 ## Command line options
 

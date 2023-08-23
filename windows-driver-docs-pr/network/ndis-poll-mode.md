@@ -3,7 +3,7 @@ title: NDIS Poll Mode
 description: NDIS Poll Mode is an OS controlled polling execution model that drives the network interface datapath.
 keywords:
 - NDIS Poll Mode
-ms.date: 08/26/2022
+ms.date: 03/02/2023
 ms.localizationpriority: medium
 ---
 
@@ -27,7 +27,7 @@ NDIS Poll Mode is available to NDIS 6.85 and later miniport drivers.
 
 The following sequence diagram illustrates a typical example of how an NDIS miniport driver handles a burst of Rx packets using a DPC. In this example the hardware is standard in terms of PCIe NICs. It has a receive hardware queue and an interrupt mask for that queue. 
 
-:::image type="content" source="./images/ndis-traditional-dpc-diagram.png" alt-text="Diagram illustrating the NDIS DPC model.":::
+:::image type="content" source="./images/ndis-traditional-dpc-diagram.png" alt-text="Diagram showing the NDIS DPC model with Rx packets and a receive hardware queue.":::
 
 When there's no network activity the hardware has the Rx interrupt enabled. When an Rx packet arrives:
 1. The hardware generates an interrupt and NDIS calls the driver’s [*MiniportInterrupt*](/windows-hardware/drivers/ddi/ndis/nc-ndis-miniport_isr) function (ISR).
@@ -40,7 +40,7 @@ Two pain points can affect the network stack when the driver defers I/O operatio
  
 1. The driver doesn't know if the system is capable of processing all of the data that is being indicated, so the driver has no choice but to drain as many elements as possible from its hardware queue and indicate them up the stack. 
 
-1. Since the driver is using a DPC to defer work from its ISR, all the indications are made at DISPATCH_LEVEL. This can overwhelm the system when long indication chains are made and cause [Bug Check 0x133 DPC_WATCHDOG_VIOLATION](../debugger/bug-check-0x133-dpc-watchdog-violation).
+1. Since the driver is using a DPC to defer work from its ISR, all the indications are made at DISPATCH_LEVEL. This can overwhelm the system when long indication chains are made and cause [Bug Check 0x133 DPC_WATCHDOG_VIOLATION](../debugger/bug-check-0x133-dpc-watchdog-violation.md).
  
 Avoiding these pain points requires a lot of tricky code in your driver. While you can check if the DPC watchdog is close to the limit with the [**KeQueryDpcWatchdogInformation**](/windows-hardware/drivers/ddi/wdm/nf-wdm-kequerydpcwatchdoginformation) function and break out of the DPC, you still need to build an infrastructure around this in your driver: You need some way to pause for a bit, then continue to indicate the packets, and at the same time you need to synchronize all this with the lifetime of the datapath.
 
@@ -64,7 +64,7 @@ A Poll object offers the following:
 
 The following sequence diagram illustrates how the same hypothetical PCIe NIC driver handles a burst of Rx packets using a Poll object instead of a DPC. 
 
-:::image type="content" source="./images/ndis-poll-mode-sequence-diagram.png" alt-text="Diagram illustrating NDIS Poll Mode.":::
+:::image type="content" source="./images/ndis-poll-mode-sequence-diagram.png" alt-text="Diagram showing NDIS Poll Mode with Rx packets and a receive hardware queue.":::
 
 Like the DPC model, when an Rx packet arrives the hardware generates an interrupt, NDIS calls the driver’s ISR, and the driver disables the interrupt from the ISR. At this point the Poll Mode model diverges:
 

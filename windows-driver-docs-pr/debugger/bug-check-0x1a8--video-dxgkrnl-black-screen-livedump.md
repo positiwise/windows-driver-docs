@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1A8 VIDEO_DXGKRNL_BLACK_SCREEN_LIVEDUMP", "VIDEO_DXGKRNL
 ms.date: 01/28/2018
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - VIDEO_DXGKRNL_BLACK_SCREEN_LIVEDUMP
 api_type:
@@ -42,5 +43,7 @@ User initiated DXGKRNL live dump for black screen scenarios. See the values for 
 (This code can never be used for a real bugcheck; it is used to identify live dumps.)
 
 ## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
 
 [Bug Check Code Reference](bug-check-code-reference2.md)

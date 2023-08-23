@@ -4,6 +4,7 @@ description: The WIA_IPS_YPOS property contains the current y-coordinate, in pix
 keywords: ["WIA_IPS_YPOS Imaging Devices"]
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - WIA_IPS_YPOS
 api_location:
@@ -36,7 +37,7 @@ When the origin or one extent is changed, the driver has to update the [**WIA_IP
 A driver must also update WIA_IPS_XEXTENT, WIA_IPS_XPOS, WIA_IPS_YEXTENT, and WIA_IPS_YPOS properties when the [**WIA_IPS_XRES**](wia-ips-xres.md) and [**WIA_IPS_YRES**](wia-ips-yres.md) properties are changed.
 
 > [!NOTE]
-> Information the user should notice even if skimmingFlatbed and Film child items are required to support only the WIA_IPS_XEXTENT, WIA_IPS_XPOS, WIA_IPS_XRES, WIA_IPS_YEXTENT, WIA_IPS_YPOS, and WIA_IPS_YRES properties. All other properties, required or optional for their parent (the base Flatbed or Film items), are only optional for these items. The only exceptions are the WIA_IPA_ITEM_*Xxx* properties, which are required for all items.
+> Flatbed and Film child items are required to support only the WIA_IPS_XEXTENT, WIA_IPS_XPOS, WIA_IPS_XRES, WIA_IPS_YEXTENT, WIA_IPS_YPOS, and WIA_IPS_YRES properties. All other properties, required or optional for their parent (the base Flatbed or Film items), are only optional for these items. The only exceptions are the WIA_IPA_ITEM_*Xxx* properties, which are required for all items.
 
 ## Requirements
 

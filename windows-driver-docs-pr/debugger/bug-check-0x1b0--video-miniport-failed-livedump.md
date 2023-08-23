@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1B0 VIDEO_MINIPORT_FAILED_LIVEDUMP", "VIDEO_MINIPORT_FAI
 ms.date: 01/08/2018
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - VIDEO_MINIPORT_FAILED_LIVEDUMP
 api_type:
@@ -32,6 +33,8 @@ The DXGKRNL detected a problem and has captured a live dump to collect debug inf
 
 
 ## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
 
 [Bug Check Code Reference](bug-check-code-reference2.md)
 

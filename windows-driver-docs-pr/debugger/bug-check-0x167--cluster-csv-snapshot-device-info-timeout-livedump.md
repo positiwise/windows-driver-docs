@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x167 CLUSTER_CSV_SNAPSHOT_DEVICE_INFO_TIMEOUT_LIVEDUMP", 
 ms.date: 01/03/2019
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - CLUSTER_CSV_SNAPSHOT_DEVICE_INFO_TIMEOUT_LIVEDUMP
 api_type:
@@ -37,6 +38,8 @@ A Cluster Service call to the volsnap to query snapshot information took too lon
 ## See Also
 
 [Troubleshooting Hangs Using Live Dump (Blog)](https://techcommunity.microsoft.com/t5/Failover-Clustering/bg-p/FailoverClustering)
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
 
 [Bug Check Code Reference](bug-check-code-reference2.md)
 

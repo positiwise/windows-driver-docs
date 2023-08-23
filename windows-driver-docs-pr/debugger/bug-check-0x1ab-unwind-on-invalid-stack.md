@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1AB UNWIND_ON_INVALID_STACK", "UNWIND_ON_INVALID_STACK"]
 ms.date: 07/29/2022
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - UNWIND_ON_INVALID_STACK
 api_type:
@@ -19,7 +20,7 @@ corrupted during exception dispatch or unwind (e.g. due to stack corruption of a
 At the time the invalid access occurred, the exception record was not available. 
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## UNWIND\_ON\_INVALID\_STACK Parameters
@@ -74,7 +75,7 @@ At the time the invalid access occurred, the exception record was not available.
 
 ## Cause
 
-An attempt to access an invalid stack occurred. As kernel stack is limited in size, the developer needs to be careful with tracking it limits, for example when using it to copy blocks of video memory.  For information about the Windows Kernel stack, see [Using the Kernel Stack](/windows-hardware/drivers/kernel/using-the-kernel-stack).
+An attempt to access an invalid stack occurred. As kernel stack is limited in size, the developer needs to be careful with tracking it limits, for example when using it to copy blocks of video memory.  For information about the Windows Kernel stack, see [Using the Kernel Stack](../kernel/using-the-kernel-stack.md).
 
 ## Resolution
 

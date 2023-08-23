@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x15C PDC_WATCHDOG_TIMEOUT_LIVEDUMP", "PDC_WATCHDOG_TIMEOU
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - PDC_WATCHDOG_TIMEOUT_LIVEDUMP
 api_type:
@@ -62,6 +63,11 @@ The PDC\_WATCHDOG\_TIMEOUT\_LIVEDUMP live dump has a value of 0x0000015C. This i
 </tbody>
 </table>
 
+## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
+
+[Bug Check Code Reference](bug-check-code-reference2.md)
  
 
  

@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x166 CLUSTER_RESOURCE_CALL_TIMEOUT_LIVEDUMP", "CLUSTER_RE
 ms.date: 12/27/2018
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - CLUSTER_RESOURCE_CALL_TIMEOUT_LIVEDUMP
 api_type:
@@ -67,6 +68,8 @@ A Cluster Resource call took longer than configured timeout. The system generate
 ## See Also
 
 [Troubleshooting Hangs Using Live Dump (Blog)](https://techcommunity.microsoft.com/t5/Failover-Clustering/bg-p/FailoverClustering)
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
 
 [Bug Check Code Reference](bug-check-code-reference2.md)
 

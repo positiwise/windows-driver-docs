@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x15D SOC_SUBSYSTEM_FAILURE_LIVEDUMP", "Bug Check 0x14B SO
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - Bug Check 0x14B SOC_SUBSYSTEM_FAILURE
 api_type:
@@ -108,3 +109,8 @@ If you are not equipped to use the Windows debugger to work on this problem, you
 </tbody>
 </table>
 
+## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
+
+[Bug Check Code Reference](bug-check-code-reference2.md)

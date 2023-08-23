@@ -5,6 +5,7 @@ keywords: ["Bug Check 0xC8 IRQL_UNEXPECTED_VALUE", "IRQL_UNEXPECTED_VALUE"]
 ms.date: 12/07/2020
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - IRQL_UNEXPECTED_VALUE
 api_type:
@@ -16,7 +17,7 @@ api_type:
 The IRQL\_UNEXPECTED\_VALUE bug check has a value of 0x000000C8. This indicates that the processor's IRQL is not what it should be at this time.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 ## IRQL\_UNEXPECTED\_VALUE Parameters
 

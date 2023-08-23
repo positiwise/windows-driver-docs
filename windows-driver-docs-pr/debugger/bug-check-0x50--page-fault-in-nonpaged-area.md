@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x50 PAGE_FAULT_IN_NONPAGED_AREA", "PAGE_FAULT_IN_NONPAGED
 ms.date: 03/15/2022
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - PAGE_FAULT_IN_NONPAGED_AREA
 api_type:
@@ -16,7 +17,7 @@ api_type:
 The PAGE\_FAULT\_IN\_NONPAGED\_AREA bug check has a value of 0x00000050. This indicates that invalid system memory has been referenced. Typically the memory address is wrong or the memory address is pointing at freed memory.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 ## PAGE\_FAULT\_IN\_NONPAGED\_AREA Parameters
 

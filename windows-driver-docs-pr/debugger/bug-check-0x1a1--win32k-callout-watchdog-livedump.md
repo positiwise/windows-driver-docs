@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1A1 WIN32K_CALLOUT_WATCHDOG_LIVEDUMP", "WIN32K_CALLOUT_W
 ms.date: 07/19/2021
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - WIN32K_CALLOUT_WATCHDOG_LIVEDUMP
 api_type:
@@ -39,3 +40,9 @@ For general information about working with threads, see:
 [Controlling Processes and Threads](controlling-processes-and-threads.md)
 
 [Windows Kernel-Mode Process and Thread Manager](../kernel/windows-kernel-mode-process-and-thread-manager.md)
+
+## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
+
+[Bug Check Code Reference](bug-check-code-reference2.md)

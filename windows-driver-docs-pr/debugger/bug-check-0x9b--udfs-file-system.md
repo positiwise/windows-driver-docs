@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x9B UDFS_FILE_SYSTEM", "UDFS_FILE_SYSTEM"]
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - UDFS_FILE_SYSTEM
 api_type:
@@ -17,7 +18,7 @@ api_type:
 The UDFS\_FILE\_SYSTEM bug check has a value of 0x0000009B. This bug check indicates that a problem occurred in the UDF file system.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## UDFS\_FILE\_SYSTEM Parameters

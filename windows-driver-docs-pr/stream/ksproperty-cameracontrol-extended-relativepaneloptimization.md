@@ -4,6 +4,7 @@ description: KSPROPERTY_CAMERACONTROL_EXTENDED_RELATIVEPANELOPTIMIZATION is a pr
 keywords: ["KSPROPERTY_CAMERACONTROL_EXTENDED_RELATIVEPANELOPTIMIZATION Streaming Media Devices"]
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_RELATIVEPANELOPTIMIZATION
 api_location:
@@ -11,14 +12,13 @@ api_location:
 api_type:
 - HeaderDef
 ms.date: 07/07/2020
-ms.topic: article
 ---
 
 # KSPROPERTY\_CAMERACONTROL\_EXTENDED\_RELATIVEPANELOPTIMIZATION
 
 **KSPROPERTY\_CAMERACONTROL\_EXTENDED\_RELATIVEPANELOPTIMIZATION** is a property ID used to inform the driver of whether the camera is facing front or not, relative to the active display of the application. Windows will set the property when the new WinRT API property PanelBasedOptimizationControl.Panel is set.
 
-Examples of setting KSProperty controls can be found in the [AVStream Camera Sample Driver](https://github.com/microsoft/Windows-driver-samples/tree/master/avstream/avscamera) on GitHub.
+Examples of setting KSProperty controls can be found in the [AVStream Camera Sample Driver](https://github.com/Microsoft/Windows-driver-samples/tree/main/avstream/avscamera) on GitHub.
 
 ## Usage summary table
 

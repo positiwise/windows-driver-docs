@@ -5,6 +5,7 @@ keywords: ["Bug Check 0xF0 STORAGE_MINIPORT_ERROR", "STORAGE_MINIPORT_ERROR"]
 ms.date: 01/24/2019
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - STORAGE_MINIPORT_ERROR
 api_type:
@@ -17,7 +18,7 @@ The STORAGE\_MINIPORT\_ERROR bug check has a value of 0x00000F0. It indicates th
 
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
  
 

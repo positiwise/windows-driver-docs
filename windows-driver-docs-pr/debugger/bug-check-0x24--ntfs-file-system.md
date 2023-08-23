@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x24 NTFS_FILE_SYSTEM", "NTFS_FILE_SYSTEM"]
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - NTFS_FILE_SYSTEM
 api_type:
@@ -17,7 +18,7 @@ api_type:
 The NTFS\_FILE\_SYSTEM bug check has a value of 0x00000024. This indicates a problem occurred in ntfs.sys, the driver file that allows the system to read and write to NTFS drives.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## NTFS\_FILE\_SYSTEM Parameters

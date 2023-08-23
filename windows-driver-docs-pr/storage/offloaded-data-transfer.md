@@ -1,10 +1,7 @@
 ---
 title: Windows Storage Offloaded Data Transfer
 description: Offloaded Data Transfer
-appliesto:
-- Windows Server 2019
-- Windows Server 2016
-ms.date: 09/30/2021
+ms.date: 04/03/2023
 keywords:
 - offloaded data transfers
 - Windows offloaded data transfers
@@ -16,7 +13,7 @@ ms.custom: contperf-fy22q1
 
 ## Overview
 
-This page describes Windows Offloaded Data Transfer (ODX) from a storage perspective. For information related to file systems and minifilters, see [Offloaded Data Transfers](../ifs/offloaded-data-transfers.md).
+Offloaded Data Transfer (ODX) is a feature that speeds up server copy and move operations. This feature is available starting in Windows Server 2012 and is supported on NTFS volumes. This page describes ODX from a storage device perspective. For information related to file systems and minifilters, see [Offloaded Data Transfers](../ifs/offloaded-data-transfers.md).
 
 [Windows ODX](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831628(v=ws.11)) introduces a tokenized operation to move data on storage devices. A source file and a destination file can be on the same volume, two different volumes hosted by the same machine, a local volume and a remote volume through Server Message Block (SMB2 or SMB3), or two volumes on two different machines through SMB2 or SMB3. ODX was introduced in Windows 8.
 
@@ -31,7 +28,7 @@ The process of an offload copy operation on ODX-capable storage devices is shown
 
 ## Identify an ODX-Capable Source and Destination
 
-To support ODX, storage arrays must implement the related [T10 standard specifications](https://www.t10.org/) for ODX-capable storage arrays, including offload read and write operations with tokens. During the LUN device enumeration (a system boot or a plug-and-play event), Windows gathers or updates the ODX capability information of the storage target device through the following steps.
+To support ODX, storage arrays must implement the related T10 standard specifications for ODX-capable storage arrays, including offload read and write operations with tokens. During the LUN device enumeration (a system boot or a plug-and-play event), Windows gathers or updates the ODX capability information of the storage target device through the following steps.
 
 1. Query copy offload capability.
 2. Gather the required parameters for copy offload operations and limitations.

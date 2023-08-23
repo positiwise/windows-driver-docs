@@ -1,7 +1,7 @@
 ---
 title: Universal Windows Drivers for Audio
 description: In Windows 10 you can write a universal audio driver that will work across many types of hardware.
-ms.date: 04/07/2022
+ms.date: 08/15/2022
 ---
 
 # Universal Windows Drivers for Audio
@@ -91,7 +91,7 @@ A separate extension INF file is used to customize each base driver component fo
 
 An extension INF file must be a universal INF file. For more information, see [Using a Universal INF File](../install/using-a-universal-inf-file.md).
 
-For information about adding software using INF files, see [Using a Component INF File](../install/using-a-component-inf-file.md).
+For information about adding software using INF files, see [Using a Component INF File](../install/using-a-component-inf-file.md) and [DCH Design Principles and Best Practices](../develop/dch-principles-best-practices.md).
 
 ### Submitting componentized INF files
 
@@ -99,7 +99,7 @@ APO INF packages must be submitted to the Partner Center separately from the bas
 
 ### SYSVAD  componentized INF files
 
-To see an example of componentized INF files examine the [sysvad/TabletAudioSample](https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad/TabletAudioSample), on Github.
+To see an example of componentized INF files examine the [sysvad/TabletAudioSample](https://github.com/Microsoft/Windows-driver-samples/tree/main/audio/sysvad/TabletAudioSample), on Github.
 
 | File name                              | Description                                                                    |
 |----------------------------------------|--------------------------------------------------------------------------------|
@@ -162,7 +162,7 @@ To allow the latest driver to be used, be sure and update the date and version, 
 
 ### APO driver registry key
 
-For third party-defined audio driver/APO registry keys, use HKR with the exception of HKLM\System\CurrentControlSet.
+For third party-defined audio driver/APO registry keys, use HKR.
 
 ### Use a Windows Service to facilitate UWP <-> APO communication
 

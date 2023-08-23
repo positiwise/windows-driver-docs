@@ -29,13 +29,13 @@ To get a new code signing certificate:
     * [DigiCert EV code signing certificate](https://www.digicert.com/order/order-1.php)
     * [Entrust EV code signing certificate](https://www.entrustdatacard.com/products/digital-signing-certificates/code-signing-certificates)
     * [GlobalSign EV code signing certificate](https://go.microsoft.com/fwlink/p/?LinkId=620888)
-    * [IdenTrust EV code signing certificate](https://www.identrust.com/certificates/trustid-ev-code-signing)
+    * [IdenTrust EV code signing certificate](https://www.identrust.com/digital-certificates/trustid-ev-code-signing)
     * [Sectigo (formerly Comodo) EV code signing certificate](https://sectigo.com/ssl-certificates-tls/code-signing)
     * [SSL.com EV code signing certificate](https://www.ssl.com/certificates/ev-code-signing/)
 
 1. Once the certificate authority has verified your contact information and your certificate purchase is approved, follow their directions to retrieve the certificate.
 
-1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in using with administrator credentials.
+1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in using administrator credentials.
 
 1. Select the gear icon in the upper right, then select **Developer settings**, then **Manage Certificates** on the left pane.
 
@@ -47,7 +47,7 @@ To get a new code signing certificate:
 
 ## Retire a code signing certificate
 
-1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in using with administrator credentials.
+1. Go to [Partner Center](https://partner.microsoft.com/dashboard) and sign in using administrator credentials.
 
 1. Select the gear icon in the upper right, then select **Developer settings**, then **Manage Certificates** on the left pane.
 

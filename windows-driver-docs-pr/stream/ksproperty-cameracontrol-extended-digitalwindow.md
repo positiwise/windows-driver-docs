@@ -4,6 +4,7 @@ description: KSPROPERTY_CAMERACONTROL_EXTENDED_DIGITALWINDOW is a property ID th
 keywords: ["KSPROPERTY_CAMERACONTROL_EXTENDED_DIGITALWINDOW Streaming Media Devices"]
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_DIGITALWINDOW
 api_location:
@@ -11,7 +12,6 @@ api_location:
 api_type:
 - HeaderDef
 ms.date: 06/24/2021
-ms.topic: article
 ---
 
 # KSPROPERTY_CAMERACONTROL_EXTENDED_DIGITALWINDOW
@@ -22,7 +22,7 @@ This control is a potential substitute for pan, tilt and zoom.  This control onl
 
 On SET, if a stream is not active, this controls returns **STATUS_INVALID_DEVICE_STATE**.
 
-Examples of setting KSPROPERTY controls can be found in the [AVStream Camera Sample Driver](https://github.com/microsoft/Windows-driver-samples/tree/master/avstream/avscamera) on GitHub.
+Examples of setting KSPROPERTY controls can be found in the [AVStream Camera Sample Driver](https://github.com/Microsoft/Windows-driver-samples/tree/main/avstream/avscamera) on GitHub.
 
 ## Usage summary table
 

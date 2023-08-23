@@ -3,9 +3,9 @@ title: .scriptdebug (Debug JavaScript)
 description: Use the .scriptdebug command to debug JavaScript scripts.
 keywords: [".scriptdebug Debug JavaScript Windows Debugging"]
 ms.date: 02/02/2021
-ms.topic: article
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - .scriptdebug (Debug JavaScript)
 api_type:
@@ -56,7 +56,7 @@ Specifies the name of the debugger JavaScript script to debug.
 For an overview of JavaScript debugging, see  [JavaScript Debugger Scripting - JavaScript Debugging](javascript-debugger-scripting.md#DEBUGGING).
 
 >[!NOTE] 
-> To use JavaScript Debugging with WinDbg Preview, run the debugger as Administrator.
+> To use JavaScript Debugging with WinDbg, run the debugger as Administrator.
 >
 
 

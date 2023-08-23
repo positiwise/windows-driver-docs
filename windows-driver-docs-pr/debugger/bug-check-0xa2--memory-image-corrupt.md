@@ -5,6 +5,7 @@ keywords: ["Bug Check 0xA2 MEMORY_IMAGE_CORRUPT", "MEMORY_IMAGE_CORRUPT"]
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - MEMORY_IMAGE_CORRUPT
 api_type:
@@ -17,7 +18,7 @@ api_type:
 The MEMORY\_IMAGE\_CORRUPT bug check has a value of 0x000000A2. This bug check indicates that corruption has been detected in the image of an executable file in memory.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## MEMORY\_IMAGE\_CORRUPT Parameters
@@ -70,9 +71,7 @@ A cyclic redundancy check (CRC) check on the memory range has failed.
 On a system wake operation, various regions of memory might be checked to guard against memory failures.
 
  
+ ## See Also
 
+[Bug Check Code Reference](bug-check-code-reference2.md)
  
-
-
-
-

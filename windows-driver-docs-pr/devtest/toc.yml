@@ -52,66 +52,77 @@
       href: pnputil-examples.md
     - name: "PnPUtil Return Values"
       href: pnputil-return-values.md
+  - name: "DevGen"
+# Auto-expanded node
+    items: 
+    - name: "DevGen"
+      href: devgen.md
+    - name: "DevGen Command Syntax"
+      href: devgen-command-syntax.md
+    - name: "DevGen Examples"
+      href: devgen-examples.md
   - name: "Windows Device Console (Devcon.exe)"
 # Auto-expanded node
     items: 
     - name: "Windows Device Console (Devcon.exe)"
       href: devcon.md
-    - name: "Device Console (DevCon.exe) Examples"
+    - name: "Replacing Device Console"
+      href: devcon-migration.md
+    - name: "Device Console Examples"
       href: devcon-examples.md
-    - name: "Device Console (DevCon.exe) Commands"
+    - name: "Device Console Commands"
 # Auto-expanded node
       items: 
       - name: "Device Console (DevCon.exe) Commands"
         href: devcon-general-commands.md
-      - name: "DevCon HwIDs"
-        href: devcon-hwids.md
       - name: "DevCon Classes"
         href: devcon-classes.md
-      - name: "DevCon ListClass"
-        href: devcon-listclass.md
+      - name: "DevCon ClassFilter"
+        href: devcon-classfilter.md
+      - name: "DevCon Disable"
+        href: devcon-disable.md
+      - name: "DevCon Dp_add"
+        href: devcon-dp-add.md
+      - name: "DevCon Dp_delete"
+        href: devcon-dp-delete.md
+      - name: "DevCon Dp_enum"
+        href: devcon-dp-enum.md
       - name: "DevCon DriverFiles"
         href: devcon-driverfiles.md
       - name: "DevCon DriverNodes"
         href: devcon-drivernodes.md
-      - name: "DevCon Resources"
-        href: devcon-resources.md
-      - name: "DevCon Stack"
-        href: devcon-stack.md
-      - name: "DevCon Status"
-        href: devcon-status.md
+      - name: "DevCon Enable"
+        href: devcon-enable.md
       - name: "DevCon Find"
         href: devcon-find.md
       - name: "DevCon FindAll"
         href: devcon-findall.md
-      - name: "DevCon Enable"
-        href: devcon-enable.md
-      - name: "DevCon Disable"
-        href: devcon-disable.md
-      - name: "DevCon Update"
-        href: devcon-update.md
-      - name: "DevCon UpdateNI"
-        href: devcon-updateni.md
+      - name: "DevCon HwIDs"
+        href: devcon-hwids.md
       - name: "DevCon Install"
         href: devcon-install.md
+      - name: "DevCon ListClass"
+        href: devcon-listclass.md
+      - name: "DevCon Reboot"
+        href: devcon-reboot.md
       - name: "DevCon Remove"
         href: devcon-remove.md
       - name: "DevCon Rescan"
         href: devcon-rescan.md
+      - name: "DevCon Resources"
+        href: devcon-resources.md
       - name: "DevCon Restart"
         href: devcon-restart.md
-      - name: "DevCon Reboot"
-        href: devcon-reboot.md
       - name: "DevCon SetHwID"
         href: devcon-sethwid.md
-      - name: "DevCon ClassFilter"
-        href: devcon-classfilter.md
-      - name: "DevCon Dp_add"
-        href: devcon-dp-add.md
-      - name: "DevCon Dp_enum"
-        href: devcon-dp-enum.md
-      - name: "DevCon Dp_delete"
-        href: devcon-dp-delete.md
+      - name: "DevCon Stack"
+        href: devcon-stack.md
+      - name: "DevCon Status"
+        href: devcon-status.md
+      - name: "DevCon Update"
+        href: devcon-update.md
+      - name: "DevCon UpdateNI"
+        href: devcon-updateni.md
   - name: "Additional Test Tools"
 # Auto-expanded node
     items: 
@@ -629,6 +640,8 @@
       href: code-integrity-checking.md
     - name: "WDF verification"
       href: wdf-verification.md
+    - name: "File System Filter verification"
+      href: file-system-filter-verification.md
     - name: "Driver Verifier: What's new"
       href: driver-verifier--what-s-new.md
     - name: "Using Driver Verifier"
@@ -2808,6 +2821,8 @@
         href: bcdedit--dbgsettings.md
       - name: "BCDEdit /debug"
         href: bcdedit--debug.md
+      - name: "BCDEdit /default"
+        href: bcdedit--default.md
       - name: "BCDEdit /deletevalue"
         href: bcdedit--deletevalue.md
       - name: "BCDEdit /displayorder"
@@ -2828,10 +2843,10 @@
         href: bcdedit--timeout.md
       - name: "BCDEdit /toolsdisplayorder"
         href: bcdedit--toolsdisplayorder.md
-    - name: "Editing Boot Options"
+    - name: "Edit boot options"
 # Auto-expanded node
       items: 
-      - name: "Editing Boot Options"
+      - name: "Edit boot options"
         href: editing-boot-options.md
       - name: "Changing Boot Parameters"
         href: changing-boot-parameters.md
@@ -2925,14 +2940,7 @@
     - name: "Tools for Device Metadata Packages"
       href: tools-for-device-metadata-packages.md
     - name: "ComputerHardwareIds"
-# Auto-expanded node
-      items: 
-      - name: "ComputerHardwareIds"
-        href: computerhardwareids.md
-      - name: "ComputerHardwareIds Overview"
-        href: computerhardwareids-overview.md
-      - name: "ComputerHardwareIds Output"
-        href: computerhardwareids-output.md
+      href: computerhardwareids.md
     - name: "Device Metadata Authoring Wizard"
 # Auto-expanded node
       items: 

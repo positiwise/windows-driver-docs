@@ -5,11 +5,12 @@ keywords:
 - print devices WDK
 - print WDK See printer driver
 - print WDK See printing
-ms.date: 08/13/2021
-ms.topic: article
+ms.date: 03/03/2023
 ---
 
 # Printer driver design guide
+
+[!include[Print Support Apps](../includes/print-support-apps.md)]
 
 This section provides information on designing, testing, and debugging printer drivers.
 
