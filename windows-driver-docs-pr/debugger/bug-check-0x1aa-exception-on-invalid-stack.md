@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1AA EXCEPTION_ON_INVALID_STACK", "EXCEPTION_ON_INVALID_S
 ms.date: 07/29/2022
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - EXCEPTION_ON_INVALID_STACK
 api_type:
@@ -74,7 +75,7 @@ corrupted during exception dispatch or unwind (e.g. due to stack corruption of a
 
 ## Cause
 
-An attempt to access an invalid stack occurred. As a kernel stack is limited in size, the developer needs to be careful with tracking it limits, for example when using it to copy blocks of video memory.  For information about the Windows Kernel stack, see [Using the Kernel Stack](/windows-hardware/drivers/kernel/using-the-kernel-stack). 
+An attempt to access an invalid stack occurred. As a kernel stack is limited in size, the developer needs to be careful with tracking it limits, for example when using it to copy blocks of video memory.  For information about the Windows Kernel stack, see [Using the Kernel Stack](../kernel/using-the-kernel-stack.md). 
 
 ## Resolution
 

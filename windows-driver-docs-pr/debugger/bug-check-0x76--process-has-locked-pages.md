@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x76 PROCESS_HAS_LOCKED_PAGES", "PROCESS_HAS_LOCKED_PAGES"
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - PROCESS_HAS_LOCKED_PAGES
 api_type:
@@ -17,7 +18,7 @@ api_type:
 The PROCESS\_HAS\_LOCKED\_PAGES bug check has a value of 0x00000076. This bug check indicates that a driver failed to release locked pages after an I/O operation, or that it attempted to unlock pages that were already unlocked.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## PROCESS\_HAS\_LOCKED\_PAGES Parameters

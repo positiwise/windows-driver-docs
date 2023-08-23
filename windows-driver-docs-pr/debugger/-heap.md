@@ -5,6 +5,7 @@ keywords: ["heap usage", "GFlags, enabling page heap", "heap Windows Debugging"]
 ms.date: 08/23/2019
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - heap
 api_type:
@@ -124,7 +125,7 @@ Can be any combination of the following options. The *HeapOptions* values are ca
 <td align="left"><p><strong>-v</strong></p></td>
 <td align="left"><p>Causes the debugger to validate the specified heap.</p>
 <div class="alert">
-<strong>Note</strong>  This option does not detect low fragmentation heap (LFH) corruption. Use <strong>-triage</strong> instead.
+<strong>Note</strong>  This option does not detect low fragmentation heap (LFH) corruption. Use <strong>-triage</strong> instead.
 </div>
 <div>
  

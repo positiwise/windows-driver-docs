@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x74 BAD_SYSTEM_CONFIG_INFO", "BAD_SYSTEM_CONFIG_INFO"]
 ms.date: 01/29/2021
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - BAD_SYSTEM_CONFIG_INFO
 api_type:
@@ -16,7 +17,7 @@ api_type:
 The BAD\_SYSTEM\_CONFIG\_INFO bug check has a value of 0x00000074. This bug check indicates that there is an error in the registry.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## BAD\_SYSTEM\_CONFIG\_INFO Parameters

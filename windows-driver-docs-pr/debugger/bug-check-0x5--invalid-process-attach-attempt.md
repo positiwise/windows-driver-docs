@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x5 INVALID_PROCESS_ATTACH_ATTEMPT", "INVALID_PROCESS_ATTA
 ms.date: 09/04/2020
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - INVALID_PROCESS_ATTACH_ATTEMPT
 api_type:
@@ -19,7 +20,7 @@ The INVALID\_PROCESS\_ATTACH\_ATTEMPT bug check has a value of 0x00000005. This 
 This bug check appears very infrequently.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## INVALID\_PROCESS\_ATTACH\_ATTEMPT Parameters

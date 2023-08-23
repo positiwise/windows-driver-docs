@@ -25,7 +25,7 @@ If it is possible, the compiler and linker should not optimize your code. Source
 
 ### <span id="locating_the_symbol_files_and_source_files"></span><span id="LOCATING_THE_SYMBOL_FILES_AND_SOURCE_FILES"></span>Locating the Symbol Files and Source Files
 
-To debug in source mode, the debugger must be able to find the source files and the symbol files. For more information, see [Source Code](source-code.md).
+To debug in source mode, the debugger must be able to find the source files and the symbol files. For more information, see [Source path](source-path.md).
 
 ### <span id="beginning_source_debugging"></span><span id="BEGINNING_SOURCE_DEBUGGING"></span>Beginning Source Debugging
 
@@ -42,7 +42,7 @@ g
 
 The application is then loaded and stops when the **main** function is entered. (Of course, you can use any entry point, not only **main**.)
 
-If the application throws an exception, it breaks into the debugger. Source information is available at this point. However, if you issue a break by using the [**CTRL+C**](ctrl-c--break-.md), [CTRL+BREAK](debug---break.md), or Debug | Break command, the debugger creates a new thread, so you cannot see your source code.
+If the application throws an exception, it breaks into the debugger. Source information is available at this point. However, if you issue a break by using the [**CTRL+C**](ctrl-c--break-.md), **CTRL+BREAK**, or Debug | Break command, the debugger creates a new thread, so you cannot see your source code.
 
 After you have reached a thread that you have source files for, you can use the Debugger Command window to execute source debugging commands. If you are using WinDbg, the [Source window](source-window.md) appears. If you have already opened a Source window by clicking **Open Source File** on the **File** menu, WinDbg typically create a new window for the source. You can close the previous window without affecting the debugging process.
 
@@ -58,9 +58,7 @@ If you are in source mode, the appropriate Source window moves to the foreground
 
 As you move through the application, WinDbg highlights your location in the Source window and the Disassembly window. Lines at which breakpoints are set are also highlighted. The source code is colored according to the parsing of the language. If the Source window has been selected, you can hover over a symbol with the mouse to evaluate it. For more information about these features and how to control them, see [Source Windows](source-window.md).
 
-To activate source mode in WinDbg, use the [**l+t**](l---l---set-source-options-.md) command, click **source mode** on the **debug** menu, or click the **source mode on** button (![screen shot of the source mode on button.](images/tbsrc.png)) on the toolbar.
-
-When source mode is active, the **ASM** indicator appears unavailable on the status bar.
+To activate source mode in WinDbg, use the [**l+t**](l---l---set-source-options-.md) command, click **source mode** on the **debug** menu, or click the **source mode on** button. When source mode is active, the **ASM** indicator appears unavailable on the status bar.
 
 You can view or alter the values of any local variables as you step through a function in source mode. For more information, see [Reading and Writing Memory](reading-and-writing-memory.md).
 

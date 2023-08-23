@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1C5 IO_THREADPOOL_DEADLOCK_LIVEDUMP", "IO_THREADPOOL_DEA
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - IO_THREADPOOL_DEADLOCK_LIVEDUMP
 api_type:
@@ -53,12 +54,8 @@ The IO\_THREADPOOL\_DEADLOCK\_LIVEDUMP live dump has a value of 0x000001C5. This
 </tbody>
 </table>
 
- 
+ ## See Also
 
- 
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
 
- 
-
-
-
-
+[Bug Check Code Reference](bug-check-code-reference2.md)

@@ -5,6 +5,7 @@ keywords:
 - INF DDInstall.HW Section Device and Driver Installation
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - INF DDInstall.HW Section
 api_type:
@@ -86,7 +87,7 @@ CopyFiles=example_copyfiles
 AddReg=filter_addreg
 
 [filter_addreg]
-HKR,,"UpperFilters",0x00010000,"ExampleUpperFilter" ; [REG_MULTI_SZ](https://docs.microsoft.com/windows/desktop/SysInfo/registry-value-types) value 
+HKR,,"UpperFilters",0x00010000,"ExampleUpperFilter" ; [REG_MULTI_SZ](https://learn.microsoft.com/windows/desktop/SysInfo/registry-value-types) value 
 
 [Example_DDInstall.Services]
 AddService=ExampleFunctionDriver,0x00000002,function_ServiceInstallSection

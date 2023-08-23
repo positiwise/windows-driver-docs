@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x198 UFX_LIVEDUMP", "UFX_LIVEDUMP"]
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - UFX_LIVEDUMP
 api_type:
@@ -55,12 +56,10 @@ The UFX\_LIVEDUMP live dump has a value of 0x00000198. This indicates that a UFX
 </tbody>
 </table>
 
- 
 
- 
+## See Also
 
- 
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
 
-
-
+[Bug Check Code Reference](bug-check-code-reference2.md) 
 

@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x8E KERNEL_MODE_EXCEPTION_NOT_HANDLED", "KERNEL_MODE_EXCE
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - KERNEL_MODE_EXCEPTION_NOT_HANDLED
 api_type:
@@ -16,7 +17,7 @@ api_type:
 The KERNEL\_MODE\_EXCEPTION\_NOT\_HANDLED bug check has a value of 0x0000008E. This bug check indicates that a kernel-mode application generated an exception that the error handler did not catch.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 ## KERNEL\_MODE\_EXCEPTION\_NOT\_HANDLED Parameters
 

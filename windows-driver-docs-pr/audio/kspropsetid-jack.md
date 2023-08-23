@@ -1,8 +1,10 @@
 ---
 title: KSPROPSETID\_Jack
 description: KSPROPSETID\_Jack
-ms.date: 11/28/2017
+ms.date: 03/06/2023
+ms.topic: reference
 ---
+
 
 # KSPROPSETID\_Jack
 
@@ -14,6 +16,8 @@ The `KSPROPSETID_Jack` property set includes the [**KSPROPERTY\_JACK**](ksproper
 [**KSPROPERTY\_JACK\_DESCRIPTION**](ksproperty-jack-description.md)
 
 [**KSPROPERTY\_JACK\_DESCRIPTION2**](ksproperty-jack-description2.md)
+
+[**KSPROPERTY\_JACK\_DESCRIPTION3**](ksproperty-jack-description3.md)
 
 [**KSPROPERTY\_JACK\_SINK\_INFO**](ksproperty-jack-sink-info.md)
 

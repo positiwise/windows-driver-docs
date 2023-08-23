@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1A3 CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP", "C
 ms.date: 05/25/2018
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - CALL_HAS_NOT_RETURNED_WATCHDOG_TIMEOUT_LIVEDUMP
 api_type:
@@ -31,3 +32,8 @@ The following parameters are displayed on the blue screen.
 |     3     |                 Timeout in milliseconds.                  |
 |     4     |    dt nt!_PO_CALL_HAS_NOT_RETURNED_WATCHDOG <address>     |
 
+## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
+
+[Bug Check Code Reference](bug-check-code-reference2.md)

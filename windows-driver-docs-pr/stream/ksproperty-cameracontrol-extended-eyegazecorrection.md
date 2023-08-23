@@ -4,14 +4,14 @@ description: KSPROPERTY_CAMERACONTROL_EXTENDED_EYEGAZECORRECTION is a property I
 keywords: ["KSPROPERTY_CAMERACONTROL_EXTENDED_EYEGAZECORRECTION Streaming Media Devices"]
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - KSPROPERTY_CAMERACONTROL_EXTENDED_EYEGAZECORRECTION
 api_location:
 - Ksmedia.h
 api_type:
 - HeaderDef
-ms.date: 05/16/2022
-ms.topic: article
+ms.date: 09/19/2022
 ---
 
 # KSPROPERTY_CAMERACONTROL_EXTENDED_EYEGAZECORRECTION
@@ -20,7 +20,7 @@ ms.topic: article
 
 This property ID controls an in-stream correction that a driver can perform to enable high quality image correction for use with preview and recorded images. The in-stream correction need to be enabled and disabled in the driver in a uniform way, so that the features may be controlled by either Windows or an application.
 
-Examples of setting KSPROPERTY controls can be found in the [AVStream Camera Sample Driver](https://github.com/microsoft/Windows-driver-samples/tree/master/avstream/avscamera) on GitHub.
+Examples of setting KSPROPERTY controls can be found in the [AVStream Camera Sample Driver](https://github.com/Microsoft/Windows-driver-samples/tree/main/avstream/avscamera) on GitHub.
 
 ## Update to KSPROPERTY_CAMERACONTROL_EXTENDED_EYEGAZECORRECTION control
 
@@ -31,14 +31,6 @@ Starting in Windows 11, version 22H2, Stare mode has been introduced to existing
 While the Eye Gaze Correction (also known as Eye Contact) solves for the geometrical problem of camera-display offset, many video scenarios require the user to be looking down at the screen for extended periods of time while also speaking – imagine reading a presentation/document in a call.
 
 Stare is a more aggressive form of Eye Contact that continually shifts the pixels of the eyes to make it look like you are speaking with your audience even though you might be reading off a script and moving the eyeball rapidly.
-
-The following table shows example images of how this works:
-
-| Mode | Example image |
-|--|--|
-| Eye gaze correction OFF  | ![eye gaze correction off.](images/eyegazecorrection_off.png) |
-| Eye gaze correction ON | ![eye gaze correction on.](images/eyegazecorrection_on.png) |
-| Stare ON | ![eye gaze correction stare on.](images/eyegazecorrection_stare_on.png) |
 
 ## Usage summary table
 

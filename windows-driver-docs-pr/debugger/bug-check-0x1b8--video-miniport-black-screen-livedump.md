@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1B8 VIDEO_MINIPORT_BLACK_SCREEN_LIVEDUMP", "VIDEO_MINIPO
 ms.date: 02/20/2020
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - VIDEO_MINIPORT_BLACK_SCREEN_LIVEDUMP
 api_type:
@@ -41,5 +42,7 @@ User initiated MINIPORT live dump for black screen scenarios. See the values for
 (This code can never be used for a real bugcheck; it is used to identify live dumps.)
 
 ## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
 
 [Bug Check Code Reference](bug-check-code-reference2.md)

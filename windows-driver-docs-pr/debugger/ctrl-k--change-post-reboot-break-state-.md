@@ -5,6 +5,7 @@ keywords: ["CTRL+K (Change Post-Reboot Break State) Windows Debugging"]
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - CTRL+K (Change Post-Reboot Break State)
 api_type:
@@ -79,7 +80,7 @@ In this state, the debugger will break into a rebooted target computer after the
 
 When CTRL+K is used, the new break state is displayed.
 
-In WinDbg, this can also be accomplished by selecting [Debug | Kernel Connection | Cycle Initial Break](debug---kernel-connection---cycle-initial-break.md).
+In WinDbg, this can also be accomplished by selecting **Debug | Kernel Connection | Cycle Initial Break**.
 
  
 

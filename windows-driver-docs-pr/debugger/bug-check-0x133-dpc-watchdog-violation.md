@@ -5,13 +5,14 @@ keywords: ["Bug Check 0x133 DPC_WATCHDOG_VIOLATION", "DPC_WATCHDOG_VIOLATION"]
 ms.date: 03/14/2022
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - DPC_WATCHDOG_VIOLATION
 api_type:
 - NA
 ---
 
-# Bug Check 0x133 DPC\_WATCHDOG\_VIOLATION
+# Bug Check 0x133: DPC\_WATCHDOG\_VIOLATION
 
 The DPC\_WATCHDOG\_VIOLATION bug check has a value of 0x00000133. This bug check indicates that the DPC watchdog executed, either because it detected a single long-running deferred procedure call (DPC), or because the system spent a prolonged time at an interrupt request level (IRQL) of DISPATCH\_LEVEL or above. 
 
@@ -20,7 +21,7 @@ The value of Parameter 1 indicates whether a single DPC exceeded a timeout, or w
 For more information about DPCs, see [Introduction to DPC Objects](../kernel/introduction-to-dpc-objects.md) and [Windows Internals 7th Edition Part 1](/sysinternals/resources/windows-internals) by  Pavel Yosifovich, Mark E. Russinovich, David A. Solomon and Alex Ionescu.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 ## DPC\_WATCHDOG\_VIOLATION Parameters
 

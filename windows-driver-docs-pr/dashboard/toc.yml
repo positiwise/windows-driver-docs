@@ -25,6 +25,8 @@
     href: code-signing-reqs.md 
   - name: "Manage code signing certificates"
     href: code-signing-cert-manage.md 
+  - name: Validate a Microsoft signature
+    href: code-signing-validate.md
   - name: "Attestation sign Windows 10+ drivers"
     href: code-signing-attestation.md 
 - name: "File signing"
@@ -41,9 +43,9 @@
     href: publishing-restrictions.md
   - name: "Publish a driver to Windows Update"
     href: publish-a-driver-to-windows-update.md
-  - name: "Understanding Windows Update Automatic and Optional Rules for Driver Distribution"
+  - name: "Understanding Windows Update rules for driver distribution"
     href: understanding-windows-update-automatic-and-optional-rules-for-driver-distribution.md
-  - name: "Validating driver updates for Modern Standby systems "
+  - name: "Validating driver updates for Modern Standby systems"
     href: validating-driver-updates-for-modern-standby-systems.md
   - name: "Share a driver with a partner"
     href: sharing-drivers-with-your-partners.md
@@ -112,14 +114,32 @@
       items:
       - name: "Audio measures"
         href: audio-measures.md
-      - name: "Percentage of machines with at least one audio stream initialization failure"
+      - name: "Stream Initilaization: Percentage of machines with at least one audio stream initialization failure"
         href: pct-machines-with-at-least-one-audio-stream-initialization-failure.md
-      - name: "Percent of machines with subpar stream initialization success rate"
+      - name: "Stream Initialization: Percent of machines with subpar stream initialization success rate"
         href: pct-machines-with-subpar-stream-initialization-success-rate.md
-      - name: "Percent of machines with at least one audio crash"
-        href: percent-machines-with-at-least-one-audio-crash.md
-      - name: "Percent of machines with at least one audio hang"
+      - name: "Stream Initialization: Percent of machine endpoints with at least one audio stream initialization failure"
+        href: pct-machine-endpoints-with-at-least-one-audio-stream-initialization-failure-per-driver.md
+      - name: "Stream Initialization: Percent of machine endpoints with subpar stream initialization success rate"
+        href: pct-machine-endpoints-with-subpar-stream-initialization-success-rate.md
+      - name: "Audio Reliabity: Percent of machines with at least one audio crash"
+        href: pct-machines-with-at-least-one-audio-crash.md
+      - name: "Audio Reliability: Percent of machines with at least one audio hang"
         href: pct-machines-with-at-least-one-audio-hang.md
+      - name: "Render Stream Initialization: Percent of machine endpoints with at least one audio render stream initialization failure"
+        href: pct-machine-endpoints-with-at-least-one-audio-render-stream-initialization-failure-per-driver.md
+      - name: "Render Stream Initialization: Percent of machines with at least one audio render stream initialization failure per Driver"
+        href: pct-machines-with-at-least-one-audio-render-stream-initialization-failure.md
+      - name: "Capture Stream Initialization: Percent of machine endpoints with at least one audio capture stream initialization failure"
+        href: pct-machine-endpoints-with-at-least-one-audio-capture-stream-initialization-failure-per-driver.md 
+      - name: "Capture Stream Initialization: Percent of machines with at least one audio capture stream initialization failure per Driver"
+        href: pct-machines-with-at-least-one-audio-capture-stream-initialization-failure.md
+      - name: "Audio Reliability: Percentage of machine endpoints with at least one audio crash"
+        href: pct-machine-endpoints-with-at-least-one-audio-crash.md
+      - name: "Audio Reliability: Percentage of machine endpoints with at least one audio hang"
+        href: pct-machine-endpoints-with-at-least-one-audio-hang.md
+      - name: "Percent of devices with at least one APO disablement in past 7 days"
+        href: pct-machines-with-at-least-one-APO-disablement-in-past-7-days.md
     - name: "Camera"
       items:
       - name: "Camera measures"
@@ -196,6 +216,12 @@
           href: pct-devices-winml-runtime-error.md
         - name: "PresentAT Netflix app SDRM machines hitting one or more media engine errors"
           href: presentat-netflix-app-sdrm-machines-hitting-one-or-more-media-engine-errors.md
+        - name: "Percent of devices with SWDRM playback that triggered the Catalog reload event"
+          href: pct-devices-with-SWDRM-playback-that-triggered-the-catalog-reload-event.md
+        - name: "Session based SWDRM Driver measure for Video playback on Netflix"
+          href: session-based-SWDRM-driver-measure-for-video-playback-on-netflix.md
+        - name: "Session based HWDRM Driver measure for Video playback on Netflix"
+          href: session-based-HWDRM-driver-measure-for-video-playback-on-netflix.md
       - name: "Ecosystem audience measures"
         items:
         - name: "Myriad of machines that had a stop error caused by a graphics driver crash (ecosystem)"
@@ -236,6 +262,7 @@
         href: percent-of-internet-connection-failures-from-the-top-95-percent-of-device-ap-pairs.md
       - name: "Percentage of Wi-Fi sessions ending in a disconnection with more than 50% signal quality"
         href: pct-wi-fi-sessions-ending-in-unexpected-disconnect.md
+    - name: "Experimental Measures"
   - name: "Appendix"
     href: measure-appendix.md
   - name: "Glossary"
@@ -336,3 +363,5 @@
   href: windows-device-experience-list.md
 - name: "Windows Certified Products List"
   href: windows-certified-products-list.md
+- name: "Contact support"
+  href: hardware-submission-support.md

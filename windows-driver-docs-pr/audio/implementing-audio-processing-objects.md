@@ -1,7 +1,7 @@
 ---
 title: Implementing Audio Processing Objects
 description: This topic describes how to implement an audio processing object (APO). For general information about APOs, see Audio Processing Object Architecture.
-ms.date: 06/11/2021
+ms.date: 05/05/2023
 ---
 
 # Implementing Audio Processing Objects
@@ -63,7 +63,7 @@ The SYSVAD audio sample is available on the [Windows Driver Samples GitHub](http
 
 You can browse the Sysvad audio sample here:
 
-<https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>
+<https://github.com/Microsoft/Windows-driver-samples/tree/main/audio/sysvad>
 
 ### Download and extract the Sysvad audio sample from GitHub
 
@@ -222,7 +222,7 @@ Disable Use of an Embedded Manifest by setting project properties for your APO p
 
 ## Packaging your APO with a Driver
 
-When you develop your own audio driver and wrap or replace the system-supplied APOs, you must provide a driver package for installing the driver and APOs. For Windows 10, please see [Universal Windows Drivers for Audio](audio-universal-drivers.md). Your audio related driver packages should follow the policies and packaging model detailed there.  
+When you develop your own audio driver and wrap or replace the system-supplied APOs, you must provide a driver package for installing the driver and APOs. For Windows 10, please see [Universal Windows Drivers for Audio](audio-universal-drivers.md). Your audio related driver packages should follow the policies and packaging model detailed there.
 
 The custom APO is packaged as a DLL, and any configuration UI is packaged as a separate UWP or Desktop Bridge app. The APO device INF copies the DLLs to the system folders that are indicated in the associated INF CopyFile directive. The DLL that contains the APOs must register itself by including an AddReg section in the INF file.
 
@@ -263,7 +263,7 @@ There is one additional valid combination that is not shown in these samples.
 
 This sample shows a multi-mode streaming effect being registered using AddReg entries in the SYSVAD Tablet INF file.
 
-This sample code is from the SYSVAD audio sample and is available on GitHub: <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>.
+This sample code is from the SYSVAD audio sample and is available on GitHub: <https://github.com/Microsoft/Windows-driver-samples/tree/main/audio/sysvad>.
 
 This sample illustrates this combination of system effects:
 
@@ -298,7 +298,7 @@ Note that in the sample INF file, the EFX\_Streaming property is commented out b
 
 Starting with Windows 10, release 1809, APO registration with the audio engine uses the componentized audio driver model. Using audio componentization creates a smoother and more reliable install experience and better supports component servicing. For more information, see [Creating a componentized audio driver installation](./audio-universal-drivers.md#creating-a-componentized-audio-driver-installation).
 
-The following example code is extracted from the public ComponentizedAudioSampleExtension.inf and ComponentizedApoSample.inf. Refer to the SYSVAD audio sample which is available on GitHub here: <https://github.com/Microsoft/Windows-driver-samples/tree/master/audio/sysvad>.
+The following example code is extracted from the public ComponentizedAudioSampleExtension.inf and ComponentizedApoSample.inf. Refer to the SYSVAD audio sample which is available on GitHub here: <https://github.com/Microsoft/Windows-driver-samples/tree/main/audio/sysvad>.
 
 The registration of the APO with the audio engine is done using a newly created APO device. For the audio engine to make use of the new APO device it must be a PNP child of the audio device, sibling of the audio endpoints. The new componentized APO design does not allow for an APO to be registered globally and used by multiple different drivers. Each driver must register its own APO's.
 
@@ -316,30 +316,39 @@ Description = "Audio Proxy APO Sample"
 This APO component triggers the second part, the installation of the APO INF, in the SYSVAD sample this is done in ComponentizedApoSample.inf. This INF file is dedicated to the APO component. It specifies the component class as AudioProcessingObject and adds all of the APO properties for CLSID registration and registering with the audio engine.
 
 >[!NOTE]
-> The INF file samples shown support driver package isolation by using in most cases the HKR registry key. Earlier samples used the HKCR to store persistent values. The exception is that registration of Component Object Model (COM) objects, a key may be written under HKCR.
- For more information, see [Using a Universal INF File](../install/using-a-universal-inf-file.md).
+> The INF file samples shown support driver package isolation by using the HKR registry key. Before Windows 11, version 22000, the samples used the HKCR to store persistent values for CLSID registrations, instead of HKR. APO registration has been supported using HKR starting with Windows 10, release 1809. For more information, see [Using a Universal INF File](../install/using-a-universal-inf-file.md).
+
 
 ```inf
 [Version]
-Signature   = "$WINDOWS NT$"
+...
 Class       = AudioProcessingObject
 ClassGuid   = {5989fce8-9cd0-467d-8a6a-5419e31529d4}
+...
 
 [ApoComponents.NT$ARCH$]
 %Apo.ComponentDesc% = ApoComponent_Install,APO\VEN_SMPL&CID_APO
 
 [Apo_AddReg]
 ; CLSID registration
-HKCR,CLSID\%SWAP_FX_STREAM_CLSID%,,,%SFX_FriendlyName%
-HKCR,CLSID\%SWAP_FX_STREAM_CLSID%\InProcServer32,,0x00020000,%%SystemRoot%%\System32\swapapo.dll
-HKCR,CLSID\%SWAP_FX_STREAM_CLSID%\InProcServer32,ThreadingModel,,"Both"
-…
+HKR,Classes\CLSID\%SWAP_FX_STREAM_CLSID%,,,%SFX_FriendlyName%
+HKR,Classes\CLSID\%SWAP_FX_STREAM_CLSID%\InProcServer32,,0x00020000,%%SystemRoot%%\System32\swapapo.dll
+HKR,Classes\CLSID\%SWAP_FX_STREAM_CLSID%\InProcServer32,ThreadingModel,,"Both"
+...
 ;Audio engine registration
 HKR,AudioEngine\AudioProcessingObjects\%SWAP_FX_STREAM_CLSID%,"FriendlyName",,%SFX_FriendlyName%
 ...
 ```
 
 When this INF installs the componentized APO, on a desktop system "Audio Processing Objects" will be shown in Windows Device Manager.
+
+### Updates to CLSIDs when a new APO version is released
+
+When a new APO version is released, it is a good practice and generally recommended to update the COM class CLSID. Use tools such as GUIDGEN to create new GUIDs.
+
+#### Requirement to Update CLSIDs when moving from HKCR to HKR
+
+It is a requirement when making the switch from global COM registrations (HKCR) to device relative HKR COM registrations to change the COM class GUID. This approach reduces the possibility that the new COM objects will not be registered properly and will fail to load.
 
 ### Bluetooth Audio Sample APO INF Sample
 
@@ -438,7 +447,9 @@ HKR,"FX\\0",%PKEY_FX_EndpointEffectClsid%,,%FX_DISCOVER_EFFECTS_APO_CLSID%
 
 ### Sample APO Effect Registration
 
-This sample shows the \[Apo_AddReg\] section from the Sysvad ComponentizedApoSample.inx. This section registers the swap stream GUID with COM and registers the Swap Stream APO effect. The \[Apo_CopyFiles\] section copies the swapapo.dll into C:\\Windows\\system32.
+This sample shows the \[Apo_AddReg\] section from the Sysvad ComponentizedApoSample.inx. This section registers the swap stream GUID with COM and registers the Swap Stream APO effect. The \[Apo_CopyFiles\] section has a DestinationDirs of 13, which copies swapapo.dll into the Driverstore. For more information, see "Run From Driverstore" in [Driver Package Isolation](../develop/driver-isolation.md).
+
+For general information about INF files, see [Overview of INF Files](../install/overview-of-inf-files.md).
 
 ```inf
 ; ComponentizedApoSample.inx
@@ -578,6 +589,6 @@ Also, if the failure count value for an SFX, MFX or EFX APO reaches a system-spe
 
 [Windows Audio Processing Objects](windows-audio-processing-objects.md)
 
-[Using a Universal INF File](../install/using-a-universal-inf-file.md)
-
 [Creating a componentized audio driver installation](./audio-universal-drivers.md#creating-a-componentized-audio-driver-installation)
+
+[Driver package isolation](../develop/driver-isolation.md)

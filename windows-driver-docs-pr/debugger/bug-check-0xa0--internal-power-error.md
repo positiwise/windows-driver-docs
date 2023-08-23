@@ -5,6 +5,7 @@ keywords: ["Bug Check 0xA0 INTERNAL_POWER_ERROR", "INTERNAL_POWER_ERROR"]
 ms.date: 12/09/2020
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - INTERNAL_POWER_ERROR
 api_type:
@@ -16,7 +17,7 @@ api_type:
 The INTERNAL\_POWER\_ERROR bug check has a value of 0x000000A0. This bug check indicates that the power policy manager experienced a fatal error.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 ## INTERNAL\_POWER\_ERROR Parameters
 
@@ -161,6 +162,27 @@ Parameter 1 indicates the type of violation. The meaning of the other parameters
 <td align="left"><p>A pointer to the thread currently processing the request.</p></td>
 <td align="left"><p>The system failed to complete(resume) a power transition in a timely manner.</p></td>
 </tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parameter 1</th>
+<th align="left">Parameter 2</th>
+<th align="left">Parameter 3</th>
+<th align="left">Parameter 4</th>
+<th align="left">Cause</th>
+</tr>
+</thead>
+<tbody>
 <tr class="even">
 <td align="left"><p>0x101</p></td>
 <td align="left"><p>Reserved</p></td>
@@ -347,6 +369,27 @@ Parameter 1 indicates the type of violation. The meaning of the other parameters
 <td align="left"><p>DEVICE_OBJECT</p></td>
 <td align="left"><p>An unknown status was returned from a thermal power IRP.</p></td>
 </tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parameter 1</th>
+<th align="left">Parameter 2</th>
+<th align="left">Parameter 3</th>
+<th align="left">Parameter 4</th>
+<th align="left">Cause</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
 <td align="left"><p>0x600</p></td>
 <td align="left"><p>DEVICE_OBJECT PDO</p></td>
@@ -607,6 +650,27 @@ Parameter 1 indicates the type of violation. The meaning of the other parameters
 <td align="left"><p>Reserved</p></td>
 <td align="left"><p>Default Power Engine Plugin has encountered an internal consistency error while attempting to exclusively notify PoFx about the availability of a platform idle state.</p></td>
 </tr>
+</tbody>
+</table>
+
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Parameter 1</th>
+<th align="left">Parameter 2</th>
+<th align="left">Parameter 3</th>
+<th align="left">Parameter 4</th>
+<th align="left">Cause</th>
+</tr>
+</thead>
+<tbody>
 <tr class="odd">
 <td align="left"><p>0x680</p></td>
 <td align="left"><p>NTSTATUS failure code.</p></td>
@@ -828,7 +892,9 @@ The following procedures will help you debug certain instances of this bug check
 
 3.  Use a variety of commands to analyze the source of the error. Start with [**kb (Display Stack Backtrace)**](k--kb--kc--kd--kp--kp--kv--display-stack-backtrace-.md) .
 
- 
+ ## See Also
+
+[Bug Check Code Reference](bug-check-code-reference2.md) 
 
  
 

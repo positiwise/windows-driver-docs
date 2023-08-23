@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1C4 DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP", "DRIVE
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - DRIVER_VERIFIER_DETECTED_VIOLATION_LIVEDUMP
 api_type:
@@ -424,3 +425,9 @@ The DRIVER\_VERIFIER\_DETECTED\_VIOLATION\_LIVEDUMP live dump has a value of 0x0
     Parameter 3 - Address of internal rule state (second argument to !ruleinfo).
     Parameter 4 - Address of supplemental states (third argument to !ruleinfo).
 ```
+
+## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
+
+[Bug Check Code Reference](bug-check-code-reference2.md)

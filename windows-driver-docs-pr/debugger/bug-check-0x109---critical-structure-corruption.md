@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x109 CRITICAL_STRUCTURE_CORRUPTION", "CRITICAL_STRUCTURE_
 ms.date: 05/13/2020
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - CRITICAL_STRUCTURE_CORRUPTION
 api_type:
@@ -17,7 +18,7 @@ api_type:
 The CRITICAL\_STRUCTURE\_CORRUPTION bug check has a value of 0x00000109. This indicates that the kernel has detected critical kernel code or data corruption.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## CRITICAL\_STRUCTURE\_CORRUPTION Parameters

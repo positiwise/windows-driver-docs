@@ -5,6 +5,7 @@ keywords: ["Bug Check 0xB8 ATTEMPTED_SWITCH_FROM_DPC", "ATTEMPTED_SWITCH_FROM_DP
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - ATTEMPTED_SWITCH_FROM_DPC
 api_type:
@@ -17,7 +18,7 @@ api_type:
 The ATTEMPTED\_SWITCH\_FROM\_DPC bug check has a value of 0x000000B8. This indicates that an illegal operation was attempted by a delayed procedure call (DPC) routine.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 
 ## ATTEMPTED\_SWITCH\_FROM\_DPC Parameters
@@ -63,6 +64,10 @@ A wait operation, attach process, or yield was attempted from a DPC routine. Thi
 ## Resolution
 
 The stack trace will lead to the code in the original DPC routine that caused the error.
+
+## See Also
+
+[Bug Check Code Reference](bug-check-code-reference2.md) 
 
  
 

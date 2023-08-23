@@ -1,19 +1,21 @@
 ---
-title: Pscript-Supported Escapes
-description: Pscript-Supported Escapes
+title: Pscript-supported Escapes
+description: Provides information about Pscript-supported escapes.
 keywords:
-- PostScript Printer Driver WDK print , escapes
-- Pscript WDK print , escapes
+- PostScript Printer Driver WDK print, escapes
+- Pscript WDK print, escapes
 - escapes WDK Pscript
-ms.date: 03/28/2021
+ms.date: 01/30/2023
 ---
 
-# Pscript-Supported Escapes
+# Pscript-supported escapes
 
-The Pscript5 printer driver supports the following escapes.
+[!include[Print Support Apps](../includes/print-support-apps.md)]
+
+The PScript5 printer driver supports the following escapes.
 
 | Escape | Description |
-|--|--|
+|---|---|
 | BEGIN_PATH | Open a path. |
 | CHECKJPEGFORMAT | Determine whether a printer can handle a JPEG image. For more information about this escape, see [CHECKJPEGFORMAT](/previous-versions/windows/desktop/legacy/dd183421(v=vs.85)).<br><br>This escape produces a call to the [DrvQueryDeviceSupport](/windows/win32/api/winddi/nf-winddi-drvquerydevicesupport) function. |
 | CHECKPNGFORMAT | Determine whether a printer can handle a PNG image. For more information about this escape, see [CHECKPNGFORMAT](/previous-versions/windows/desktop/legacy/dd183424(v=vs.85)).<br><br>This escape produces a call to the [DrvQueryDeviceSupport](/windows/win32/api/winddi/nf-winddi-drvquerydevicesupport) function. |

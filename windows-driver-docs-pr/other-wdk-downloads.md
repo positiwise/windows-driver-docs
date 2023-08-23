@@ -5,7 +5,7 @@ keywords:
 - Windows Driver Kit
 - previous versions
 - WDK
-ms.date: 10/25/2021
+ms.date: 06/21/2023
 ms.custom: 19H1
 ---
 
@@ -38,7 +38,6 @@ The WDK requires Visual Studio. For more information about system requirements f
 
 > [!NOTE]
 > Visual Studio 2022 is not supported by the Windows 11, version 21H2 WDK. To use Visual Studio 2022 to develop and test drivers, download the Windows 11, version 22H2 WDK. For details, see [Download the Windows Driver Kit (WDK)](./download-the-wdk.md).
-
 
 The following table indicates which Visual Studio version is required for the different releases of the WDK.
 
@@ -85,21 +84,21 @@ develop, build, package, deploy, test, and debug drivers.
 > will by default install the WDK extensions for Visual Studio. These
 > extensions are required for integration of the WDK with Visual Studio.
 
-| Versions of Windows      | WDK and related downloads                       |
+| Targeted versions of Windows      | WDK and related downloads                       |
 |--------------------------|-------------------------------------------------|
+|Windows 11, version 22H2  | [Download the Windows Driver Kit (WDK)](./download-the-wdk.md)|
 |Windows 11, version 21H2  | [Windows 11, version 21H2 WDK](https://go.microsoft.com/fwlink/?linkid=2166289)|
 | Windows Server 2022      | [WDK for Windows Server 2022](https://go.microsoft.com/fwlink/?linkid=2164149)|
-| Windows 10, version 2004 | [WDK for Windows 10, version 2004](https://go.microsoft.com/fwlink/?linkid=2128854)| 
-| Windows 10, version 2004 | WDK for Windows 10, version 2004 (10.19041.1)* See Note below |
-| Windows 10, version 1903 | [WDK for Windows 10, version 1903](https://go.microsoft.com/fwlink/?linkid=2085767) |
-| Windows 10, version 1809 | [WDK for Windows 10, version 1809](https://go.microsoft.com/fwlink/?linkid=2026156) |
+| Windows 10, version 22H2<br>Windows 10, version 21H2<br>Windows 10, version 21H1<br>Windows 10, version 20H2<br>Windows 10, version 2004 | [WDK for Windows 10, version 2004](https://go.microsoft.com/fwlink/?linkid=2128854)|
+| Windows 10, version 1909<br>Windows 10, version 1903 | [WDK for Windows 10, version 1903](https://go.microsoft.com/fwlink/?linkid=2085767) |
+| Windows 10, version 1809<br>Windows Server 2019 | [WDK for Windows 10, version 1809](https://go.microsoft.com/fwlink/?linkid=2026156) |
 | Windows 10, version 1803 | [WDK for Windows 10, version 1803](https://go.microsoft.com/fwlink/?linkid=873060) |
 | Windows 10, version 1709 | [WDK for Windows 10, version 1709](https://go.microsoft.com/fwlink/p/?linkid=859232) |
 | Windows 10, version 1703 | [WDK for Windows 10, version 1703](https://go.microsoft.com/fwlink/p/?LinkID=845980) |
-| Windows 10, version 1607 | [WDK for Windows 10, version 1607](https://go.microsoft.com/fwlink/p/?LinkId=526733)                |
-| Windows 8.1 Update       | WDK 8.1 Update (English only) - temporarily unavailable<br/>WDK 8.1 Update Test Pack (English only) - temporarily unavailable <br/>[WDK 8.1 Samples](https://go.microsoft.com/fwlink/p/?LinkId=618052) |
+| Windows 10, version 1607<br>Windows 10, version 1511<br>Windows 10, version 1507<br>Windows Server 2016 | [WDK for Windows 10, version 1607](https://go.microsoft.com/fwlink/p/?LinkId=526733)                |
+| Windows 8.1 Update       | WDK 8.1 Update (English only) - permanently unavailable<br/>WDK 8.1 Update Test Pack (English only) - permanently unavailable <br/>[WDK 8.1 Samples](https://go.microsoft.com/fwlink/p/?LinkId=618052)  <br/><br/>**Note:** You can use any WDK from Windows 10, version 1607 through Windows 11, version 21H2 to build drivers for Windows 8.1.|
+| Windows 7 | [WDK 7.1.0](https://www.microsoft.com/download/confirmation.aspx?id=11800)|
 | Windows 8                | [WDK 8](https://go.microsoft.com/fwlink/p/?LinkID=324284) (English only) <br/>[WDK 8 redistributable components](https://go.microsoft.com/fwlink/p/?LinkID=253170) (English only) <br/>[WDK 8 Samples](https://go.microsoft.com/fwlink/p/?LinkId=616509) |
-| Windows 7 | [WDK 7.1.0](https://www.microsoft.com/download/confirmation.aspx?id=11800) |
 
 >[!NOTE]
 >Please review [Hardware development kits for Windows 10, Version 2004 (10.19041.1)](https://social.msdn.microsoft.com/Forums/en-US/96c770a9-19a3-42d0-8d0e-bd200285d980/hardware-development-kits-for-windows-10-version-2004?forum=wdk), which addresses a bug with ExAllocatePoolZero.
@@ -144,11 +143,11 @@ To work with HAL Extensions, prepare your development system, running Windows 10
 
 For more information about using this updated certificate, see [Update for "Windows OEM HAL Extension Test Cert 2017 (TEST ONLY)" test certificate](https://support.microsoft.com/help/4131991/update-for-windows-oem-hal-extension-test-cert-2017-test-only-test-cer) on Windows Support.
 
-## Optional: Install WinDbg Preview
+## Optional: Install WinDbg
 
-WinDbg Preview is a new version of WinDbg with more modern visuals, faster windows, a full-fledged scripting experience, built with the extensible debugger data model front and center. WinDbg Preview supports debugging every version of Windows 10.
+WinDbg is the latest version of WinDbg with more modern visuals, faster windows, a full-fledged scripting experience, built with the extensible debugger data model front and center. Formerly known as *WinDbg Preview*, it supports Windows 10 and Windows 11.
 
-For download links and more information about WinDbg Preview, see [Download WinDbg Preview](./debugger/debugger-download-tools.md#small-windbg-preview-logo-download-windbg-preview).
+For download links and more information about WinDbg, see [Download and install the WinDbg Windows debugger](./debugger/index.md) and [Debugging Tools for Windows](./debugger/debugger-download-tools.md).
 
 ## Standalone tools for debugging Windows XP and Windows Vista
 

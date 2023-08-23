@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x16F CLUSTER_CSV_STATE_TRANSITION_INTERVAL_TIMEOUT_LIVEDU
 ms.date: 01/03/2019
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - CLUSTER_CSV_STATE_TRANSITION_INTERVAL_TIMEOUT_LIVEDUMP
 api_type:
@@ -54,4 +55,7 @@ The system generated a live dump for analysis of the delay.
 
 [Troubleshooting Hangs Using Live Dump (Blog)](https://techcommunity.microsoft.com/t5/Failover-Clustering/bg-p/FailoverClustering)
 
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
+
 [Bug Check Code Reference](bug-check-code-reference2.md)
+

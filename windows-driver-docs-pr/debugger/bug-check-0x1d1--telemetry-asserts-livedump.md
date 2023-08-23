@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1D1 TELEMETRY_ASSERTS_LIVEDUMP", "TELEMETRY_ASSERTS_LIVE
 ms.date: 04/19/2018
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - TELEMETRY_ASSERTS_LIVEDUMP
 api_type:
@@ -23,15 +24,18 @@ To troubleshoot this issue, inspect the callstack to see why the expression in M
 
 ## TELEMETRY\_ASSERTS\_LIVEDUMP Parameters
 
-Parameter | Description 
-|---------|--------------|
-1 | Rva
-2 | ModuleName
-3 | TimeStamp
-4 | SizeOfImage
-
+| Parameter | Description |
+|-----------|-------------|
+| 1         | Rva         |
+| 2         | ModuleName  |
+| 3         | TimeStamp   |
+| 4         | SizeOfImage |
  
+## See Also
 
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
+
+[Bug Check Code Reference](bug-check-code-reference2.md)
  
 
 

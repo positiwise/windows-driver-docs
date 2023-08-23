@@ -5,6 +5,7 @@ keywords: ["Bug Check 0xB NO_EXCEPTION_HANDLING_SUPPORT", "NO_EXCEPTION_HANDLING
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - NO_EXCEPTION_HANDLING_SUPPORT
 api_type:
@@ -24,13 +25,9 @@ The [**!analyze**](-analyze.md) debug extension displays information about the b
 
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
-
-
- 
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
  
+## See Also
 
-
-
-
+[Bug Check Code Reference](bug-check-code-reference2.md) 

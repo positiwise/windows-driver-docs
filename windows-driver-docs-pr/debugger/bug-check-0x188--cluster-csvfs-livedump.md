@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x188 CLUSTER_CSVFS_LIVEDUMP", "CLUSTER_CSVFS_LIVEDUMP"]
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - CLUSTER_CSVFS_LIVEDUMP
 api_type:
@@ -67,7 +68,11 @@ The CLUSTER\_CSVFS\_LIVEDUMP live dump has a value of 0x00000188. This indicates
 First parameter contains the reason code When CSVFS detects that current state might cause data corruption or other sort of inconsistency it would generate live dump with this status code. Parameter1 has code pointing to what scenario this live dump is created for. Other parameters should be interpreted in context of the reason code.
 
  
+## See Also
 
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
+
+[Bug Check Code Reference](bug-check-code-reference2.md)
  
 
 

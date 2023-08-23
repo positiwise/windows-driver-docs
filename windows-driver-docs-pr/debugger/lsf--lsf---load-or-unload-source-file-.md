@@ -5,6 +5,7 @@ keywords: ["lsf, lsf- (Load or Unload Source File) Windows Debugging"]
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - lsf, lsf- (Load or Unload Source File)
 api_type:
@@ -56,7 +57,7 @@ Specifies the file to load or unload. If this file is not located in the directo
 
 The **lsf** command loads a source file.
 
-The **lsf-** command unloads a source file. You can use this command to unload files that you previously loaded with **lsf** or automatically loaded source files. You cannot use **lsf-** to unload files that were loaded through WinDbg's [File | Open Source File](file---open-source-file.md) command or files that a WinDbg workspace loaded.
+The **lsf-** command unloads a source file. You can use this command to unload files that you previously loaded with **lsf** or automatically loaded source files. You cannot use **lsf-** to unload files that were loaded through WinDbg's **File | Open Source File** command or files that a WinDbg workspace loaded.
 
 In CDB or KD, you can view source files in the [Debugger Command window](debugger-command-window.md). In WinDbg, source files are loaded as new [Source windows](source-window.md).
 

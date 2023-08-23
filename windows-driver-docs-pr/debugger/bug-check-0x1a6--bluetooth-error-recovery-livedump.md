@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x1A6 BLUETOOTH_ERROR_RECOVERY_LIVEDUMP", "BLUETOOTH_ERROR
 ms.date: 01/28/2019
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - BLUETOOTH_ERROR_RECOVERY_LIVEDUMP
 api_type:
@@ -32,6 +33,8 @@ The Bluetooth radio driver (bthport.sys) has initiated error recovery to attempt
 
 
 ## See Also
+
+[Kernel Live Dump Code Reference](bug-check-code-reference-live-dump.md)
 
 [Bug Check Code Reference](bug-check-code-reference2.md)
 

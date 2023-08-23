@@ -9,7 +9,7 @@ keywords:
 - IDD model
 - Indirect display driver implementation
 - IDD implementation
-ms.date: 08/09/2022
+ms.date: 10/25/2022
 ---
 
 # Indirect display driver overview
@@ -57,4 +57,4 @@ At build time, the UMDF IDD declares the version of IddCx it was built against a
 
 ## Sample code
 
-Microsoft provides a sample IDD implementation at the [Windows Driver Samples GitHub](https://github.com/microsoft/Windows-driver-samples/tree/master/video/IndirectDisplay). This sample demonstrates how to connect a monitor, how to respond to a mode set, and how to receive frames.
+Microsoft provides a sample IDD implementation at the [Windows Driver Samples GitHub](https://github.com/Microsoft/Windows-driver-samples/tree/main/video/IndirectDisplay). This sample demonstrates how to connect a monitor, how to respond to a mode set, and how to receive frames.

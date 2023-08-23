@@ -5,6 +5,7 @@ keywords: ["Bug Check 0x11D EVENT_TRACING_FATAL_ERROR", "EVENT_TRACING_FATAL_ERR
 ms.date: 12/08/2020
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - EVENT_TRACING_FATAL_ERROR
 api_type:
@@ -16,7 +17,7 @@ api_type:
 The EVENT\_TRACING\_FATAL\_ERROR bug check has a value of 0x0000011D. This bug check indicates that the Event Tracing subsystem has encountered an unexpected fatal error.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
 ## Resolution
 

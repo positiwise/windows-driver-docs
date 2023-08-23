@@ -7,7 +7,7 @@ keywords:
 - Testing pre-production drivers
 - Pre-production driver signing and testing
 author: anaharris-ms
-ms.date: 05/24/2022
+ms.date: 09/27/2022
 ms.author: anaharris
 ---
 
@@ -15,13 +15,15 @@ ms.author: anaharris
 
 On retail and production systems, the Windows kernel only trusts and loads drivers with a production WHQL/WHCP signature. To test pre-production drivers, it's required that driver developers enable [`TESTSIGNING`](./the-testsigning-boot-configuration-option.md) to enable non-production drivers to load. `TESTSIGNING` requires disabling Secure Boot, to present a difference in the testing and production environments.
 
-The Windows kernel supports loading pre-production drivers signed with the WHQL/WHCP pre-production signature. The WHQL/WHCP signuture is accessible through the Microsoft Hardware Developer Center (HDC).
+The Windows kernel supports loading pre-production drivers signed with the WHQL/WHCP pre-production signature. The WHQL/WHCP signature is accessible through the Microsoft Hardware Developer Center (HDC).
 
 ## Prerequisites
 
 - [Sign your pre-production drivers with Partner Center Hardware dashboard](../dashboard/hardware-submission-create.md)
 
-- Download *EnableUefiSbTest.exe* from the WDK. The default setup location of the *EnableUefiSbTest* tool is **C:\Program Files (x86)\Windows Kits\10\tools\{arch}\SecureBoot\EnableSB**. `{arch}` can be one of `{amd64, x86, arm, arm64}`. The policies are located under the same SecureBoot directory:**C:\Program Files (x86)\Windows Kits\10\tools\{arch}\SecureBoot\Policies**. 
+
+- Download *EnableUefiSbTest.exe* from the latest version of the Windows Driver Kit (WDK) or from [Download Center](https://aka.ms/PreprodDriverSignatureTool). The default setup location of the *EnableUefiSbTest* tool is **C:\Program Files (x86)\Windows Kits\10\tools\\{arch}\SecureBoot\EnableSB**. `{arch}` can be one of `{amd64, x86, arm, arm64}`. The policies are located under the same SecureBoot directory:**C:\Program Files (x86)\Windows Kits\10\tools\\{arch}\SecureBoot\Policies**. 
+
 
 ## Enable support for the pre-production WHQL/WHCP Signature
 
@@ -29,7 +31,7 @@ Once your driver is pre-production signed, you're ready to provision a test comp
 
 The provisioning tools and payload are provided starting in Windows 11, version 22H2.
 
-Use of the EnableUefiSbTest tool is optional, and you can instead manually provision the Microsoft test keys. The Microsoft test keys must be included in the Secure Boot database (DB) and the Secure Boot Configuration Policy (SBCP) to enable trust for the pre-production WHQL/WHCP driver signature.
+Use of the EnableUefiSbTest tool is strongly recommended. Alternatively, you can manually provision the Microsoft Test Root key from the HLK Secure Boot Manual Tests section (`UefiSecureBootManualTests.zip\ManualTests\certs\test\db_MSFTtestSigningRoot.cer`). The Microsoft test key must be included in the Secure Boot database (DB) and the Secure Boot Configuration Policy (SBCP) to enable trust for the pre-production WHQL/WHCP driver signature.
 
 > [!NOTE]
 > When provisioning any of the Secure Boot databases, never production sign a payload with the Microsoft test keys inside.
@@ -49,7 +51,7 @@ Use of the EnableUefiSbTest tool is optional, and you can instead manually provi
     If Secure Boot is disabled and the keys have been successfully cleared, the following output is expected:
     
     ```PowerShell
-    PS C:\> .\EnableUefiSbTest.exe /dump
+    EnableUefiSbTest.exe /dump
     
     Name: PK
     Not Found
@@ -74,7 +76,14 @@ Use of the EnableUefiSbTest tool is optional, and you can instead manually provi
     ```
 
     >[!NOTE]
-    > EnableUefiSbTest.exe will not output/return anything after successfully running.**
+    > EnableUefiSbTest.exe will not output/return anything after successfully running.
+	
+	Optionally, specify the `thirdparty` command to provision the Microsoft UEFI CA certificate alongside the default keys in the Secure Boot DB. This will allow trust for Microsoft UEFI CA-signed EFI executables like option ROMs and non-Windows bootloaders. 
+	
+	```PowerShell
+    EnableUefiSbTest.exe /thirdparty
+    ```
+
 
 5. For devices running Desktop-based Windows, mount the EFI partition of the system and copy over the Secure Boot policy (.p7b) file to **S:/EFI/Microsoft/Boot** by running the following command in an elevated instance of PowerShell or Terminal:
 
@@ -84,7 +93,8 @@ Use of the EnableUefiSbTest tool is optional, and you can instead manually provi
     ```
 
     >[!NOTE]
-    > Because Windows kernel requires the Secure Boot policy file in the form of `SecureBootPolicy.p7b, the name and file format must not be modified.
+    > Because Windows kernel requires the Secure Boot policy file in the form of `SecureBootPolicy.p7b`, the name and file format must not be modified.
+
 
 6. For devices not running Desktop-based Windows, copy the corresponding `PreProductionPolicy.pol` to `\EFI\Microsoft\Boot\Policies`. Then delete `FullDebugPolicy.pol` from `\EFI\Microsoft\Boot\Policies`.
 
@@ -111,7 +121,8 @@ To deprovision the system and opt-out of preproduction signing trust on the syst
 3. Reboot the system and run `EnableUefiSbTest.exe /dump`, which should return non-empty values for `PK`, `KEK`, `db` and `dbx` values indicating the keys were returned to factory state.
 
     >[!NOTE]
-    > Note: We recommend clean installing Windows on the system to de-provision a system intended for retail environments.
+    > We recommend clean installing Windows on the system to de-provision a system intended for retail environments.
+
 
 ### FAQs
 
@@ -122,3 +133,4 @@ A: This will happen if the tool is run as a standard user instead of as admin.
 Q: The `EnableUefiSbTest.exe /dump` command returns an error that I don't recognize. What do I do?
 
 A: An error may be thrown by the tool when Secure Boot has not been successfully disabled and/or the Secure Boot keys have not been cleared. Verify that Secure Boot is disabled.
+

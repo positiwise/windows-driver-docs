@@ -1,78 +1,64 @@
 ---
-title: Bug Check 0xC0000221 STATUS_IMAGE_CHECKSUM_MISMATCH
-description: The STATUS_IMAGE_CHECKSUM_MISMATCH bug check has a value of 0xC0000221. This indicates that a driver or a system DLL has been corrupted.
-keywords: ["Bug Check 0xC0000221 STATUS_IMAGE_CHECKSUM_MISMATCH", "STATUS_IMAGE_CHECKSUM_MISMATCH"]
-ms.date: 05/23/2017
+title: Bug check 0xC0000221 STATUS_IMAGE_CHECKSUM_MISMATCH
+description: The STATUS_IMAGE_CHECKSUM_MISMATCH bug check has a value of 0xC0000221 and indicates that a driver or a system DLL is corrupted.
+keywords: ["Bug check 0xC0000221 STATUS_IMAGE_CHECKSUM_MISMATCH", "STATUS_IMAGE_CHECKSUM_MISMATCH"]
+ms.date: 12/08/2022
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - STATUS_IMAGE_CHECKSUM_MISMATCH
 api_type:
 - NA
 ---
 
-# Bug Check 0xC0000221: STATUS\_IMAGE\_CHECKSUM\_MISMATCH
+# Bug check 0xC0000221: STATUS_IMAGE_CHECKSUM_MISMATCH
 
-
-The STATUS\_IMAGE\_CHECKSUM\_MISMATCH bug check has a value of 0xC0000221. This indicates that a driver or a system DLL has been corrupted.
+The STATUS_IMAGE_CHECKSUM_MISMATCH bug check has a value of 0xC0000221. The bug check indicates that a driver or a system DLL is corrupted.
 
 > [!IMPORTANT]
-> This topic is for programmers. If you are a customer who has received a blue screen error code while using your computer, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
+> This article is for programmers. If you're a Microsoft customer and your computer displays a blue screen error code, see [Troubleshoot blue screen errors](https://www.windows.com/stopcode).
 
+## STATUS_IMAGE_CHECKSUM_MISMATCH parameters
 
-## STATUS\_IMAGE\_CHECKSUM\_MISMATCH Parameters
-
+None.
 
 ## Cause
 
-This bug check results from a serious error in a driver or other system file. The file header checksum does not match the expected checksum.
+This bug check results from a serious error in a driver or other system file. The file header checksum doesn't match the expected checksum.
 
-This can also be caused by faulty hardware in the I/O path to the file (a disk error, faulty RAM, or a corrupted page file).
+This bug check also might be caused by faulty hardware in the I/O path to the file, such as a disk error, faulty RAM, or a corrupted page file.
 
 ## Resolution
 
-To remedy this error, run the Emergency Recovery Disk (ERD) and allow the system to repair or replace the missing or damaged driver file on the system partition.
+To resolve this bug check, try the following options:
 
-You can also run an in-place upgrade over the existing copy of Windows. This preserves all registry settings and configuration information, but replaces all system files. If any Service Packs and/or hotfixes had previously been applied, you need to reinstall them afterward in the appropriate order (latest Service Pack, then any post-Service Pack hotfixes in the order in which they were originally installed, if applicable).
+- If you can sign in to the system, check System Log in Event Viewer for more error messages that might help you identify the device or driver that's causing the error.
 
-If a specific file was identified in the bug check message as being corrupted, you can try replacing that individual file manually. If the system partition is formatted with FAT, you can start from an MS-DOS startup disk and copy the file from the original source onto the hard disk. If you have a dual-boot machine, you can boot to your other operating system and replace the file.
+- Use the System File Checker tool to repair missing or corrupted system files. System File Checker (SFC.exe) is a Windows utility you can use to scan for and restore corrupted Windows system files.
 
-If you want to replace the file on a single-boot system with an NTFS partition, you need to restart the system, press F8 at the operating system **Loader** menu, and choose **Safe Mode with Command Prompt**. From there, copy a fresh version of the file from the original source onto the hard disk. If the file is used as part of the system startup process in Safe Mode, you need to start the computer using the Recovery Console in order to access the file. If these methods fail, try reinstalling Windows and then restoring the system from a backup.
+   Use the following command to run System File Checker:
 
-**Note**   If the original file from the product CD has a filename extension ending in an \_ (underscore), the file needs to be uncompressed before it can be used. The Recovery Console's **Copy** command automatically detects compressed files and expands them as they are copied to the target location. If you are using Safe Mode to access a drive, use the **Expand** command to uncompress and copy the file to the target folder. You can use the **Expand** command in the command line environment of Safe Mode.
+   ```console
+   SFC /scannow
+   ```
 
- 
+   For more information, see [Use the System File Checker tool to repair missing or corrupted system files](https://support.microsoft.com/help/929833/use-the-system-file-checker-tool-to-repair-missing-or-corrupted-system).
 
-**Resolving a disk error problem:** Disk errors can be a source of file corruption. Run **Chkdsk /f /r** to detect and resolve any file system structural corruption. You must restart the system before the disk scan begins on a system partition.
+- Use the Windows disk scan utility to check for file system errors. In File Explorer, select and hold or right-click the drive you want to scan and select **Properties**. Select the **Tools** tab. Under **Error checking**, select **Check**.
 
-**Resolving a RAM problem:** If the error occurred immediately after RAM was added to the system, the paging file might be corrupted or the new RAM itself might be either faulty or incompatible.
+- Check for sufficient free space on the hard drive. The operating system and some applications require enough free space to create swap files and to complete other functions. The exact requirement varies depending on the system configuration, but it's typically a good idea to have 10% to 15% free space available.
 
-**To determine if newly added RAM is causing a bug check**
+- Disk errors might cause file corruption. Run `Chkdsk /f /r` to detect and resolve any structural corruption in the file system. You must restart the system before the disk scan begins on a system partition.
 
-1.  Return the system to the original RAM configuration.
+- Check with the manufacturer to see if an updated system BIOS or firmware is available. Disabling memory caching of the BIOS or other firmware settings also might resolve this error.
 
-2.  Use the Recovery Console to access the partition containing the paging file and delete the file pagefile.sys.
+- You can run an in-place installation or recovery over the existing copy of Windows. An in-place installation or recovery preserves all registry settings and configuration information, but all system files are replaced.
 
-3.  While still in the Recovery Console, run **Chkdsk /r** on the partition that contained the paging file.
+- Run a virus detection program. Viruses can infect all types of hard disks that are formatted for Windows. Resulting disk corruption can generate system bug check codes. Make sure that the virus detection program checks the Master Boot Record for infections.
 
-4.  Restart the system.
+- If these methods fail, reinstall Windows, and then restore the system from a backup.
 
-5.  Set the paging file to an optimal level for the amount of RAM added.
+## See also
 
-6.  Shutdown the system and add your RAM.
-
-    The new RAM must meet the system manufacturer's specifications for speed, parity, and type (that is, fast page-mode (FPM) versus extended data out (EDO) versus synchronous dynamic random access memory (SDRAM)). Try to match the new RAM to the existing installed RAM as closely as possible. RAM can come in many different capacities, and more importantly, in different formats (single inline memory modules -- SIMM -- or dual inline memory modules -- DIMM). The electrical contacts can be either gold or tin and it is not wise to mix these contact types.
-
-If you experience the same error message after reinstalling the new RAM, run hardware diagnostics supplied by the system manufacturer, especially the memory scanner. For details on these procedures, see the owner's manual for your computer.
-
-When you can log on to the system again, check the System Log in Event Viewer for additional error messages that might help pinpoint the device or driver that is causing the error.
-
-Disabling memory caching of the BIOS might also resolve this error.
-
- 
-
- 
-
-
-
-
+[Bug check code reference](bug-check-code-reference2.md)

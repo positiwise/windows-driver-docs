@@ -16,7 +16,7 @@ keywords:
 - device management WDK DevCon
 - listing device information WDK
 ms.custom: contperf-fy22q3
-ms.date: 07/26/2022
+ms.date: 10/28/2022
 ---
 
 # Windows Device Console (Devcon.exe)
@@ -24,7 +24,7 @@ ms.date: 07/26/2022
 DevCon (Devcon.exe), the Device Console, is a command-line tool that displays detailed information about devices on computers running Windows. You can use DevCon to enable, disable, install, configure, and remove devices.
 
 > [!IMPORTANT]
-> PnPUtil ships with every release of Windows and makes use of the most reliable and secure APIs available and it's use is recommended. For more information on using PnPutil instead of devcon, see [PnPUtil](pnputil.md).
+> [PnPUtil](pnputil.md) ships with every release of Windows and makes use of the most reliable and secure APIs available and its use is recommended. For more information on using PnPutil instead of devcon, see [Replacing DevCon](devcon-migration.md).
 
 ## Where can I download DevCon?
 
@@ -77,10 +77,9 @@ Devcon features include:
 
 ## DevCon source code
 
-The DevCon source code is also available so that you can examine the methods that DevCon uses to retrieve and change setup and configuration data. DevCon illustrates the use of [general setup functions](/previous-versions/ff544985(v=vs.85)), [device installation functions](/previous-versions/ff541299(v=vs.85)), and [PnP Configuration Manager functions](/previous-versions/ff549713(v=vs.85)). The source code for the [Device Console (DevCon) Tool](https://github.com/Microsoft/Windows-driver-samples/tree/master/setup/devcon) is available in the [Windows driver samples](https://github.com/Microsoft/Windows-driver-samples) repository on GitHub.
+The DevCon source code is also available so that you can examine the methods that DevCon uses to retrieve and change setup and configuration data. DevCon illustrates the use of [general setup functions](/previous-versions/ff544985(v=vs.85)), [device installation functions](/previous-versions/ff541299(v=vs.85)), and [PnP Configuration Manager functions](/previous-versions/ff549713(v=vs.85)). The source code for the [Device Console (DevCon) Tool](https://github.com/Microsoft/Windows-driver-samples/tree/main/setup/devcon) is available in the [Windows driver samples](https://github.com/Microsoft/Windows-driver-samples) repository on GitHub.
 
 ## Related topics
 
-[DevCon Commands](devcon-general-commands.md)
-
-[DevCon Examples](devcon-examples.md)
+- [DevCon Commands](devcon-general-commands.md)
+- [DevCon Examples](devcon-examples.md)

@@ -5,6 +5,7 @@ keywords: ["hidkd.hidtree Windows Debugging"]
 ms.date: 05/23/2017
 topic_type:
 - apiref
+ms.topic: reference
 api_name:
 - hidkd.hidtree
 api_type:
@@ -23,8 +24,6 @@ The **!hidkd.hidtree** command displays a list of all device nodes that have a H
 This screen shot shows an example of the output of the **!hidtree** command.
 
 ![output of the hidtree command.](images/hidkd01.png)
-
-O
 
 In this example, there are two device nodes that have a HID function driver. A functional device object (FDO) represents the HID driver in those two nodes. The first FDO node has two child nodes, and the second FDO node has one child node. In the debugger output, the child nodes have the PDO heading.
 

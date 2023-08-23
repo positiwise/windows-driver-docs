@@ -2,16 +2,19 @@
 title: Attestation sign Windows 10+ drivers
 description: Attestation sign Windows 10+ drivers
 ms.topic: article
-ms.date: 04/20/2022
+ms.date: 03/13/2023
 ---
 
 # Attestation sign Windows 10+ drivers
 
-This article describes how to sign a driver using attestation signing. For detailed information and requirements for attestation signing, see [Windows 10 attestation signed drivers](code-signing-reqs.md#windows-10-attestation-signed-drivers).
+This article describes how to sign a driver using attestation signing.  For detailed information and requirements for attestation signing, see [Windows 10 attestation signed drivers](code-signing-reqs.md#windows-10-attestation-signed-drivers-for-testing-scenarios).
 
+
+>[!IMPORTANT]
+>As of March 1, 2023, attestation signed drivers targeting retail audiences are no longer published on Windows Update.  Attestation signed drivers for testing scenarios are still supported when selecting *CoDev* or *Test Registry Key / Surface SSRK* options.
 ## Prerequisites
 
-- Read and understand the requirements for [Windows 10 attestation signed drivers](code-signing-reqs.md#windows-10-attestation-signed-drivers).
+- Read and understand the requirements for [Windows 10 attestation signed drivers](code-signing-reqs.md#windows-10-attestation-signed-drivers-for-testing-scenarios).
 
 - Register for the Hardware Developer program. If you're not yet registered, follow the steps in [How to register for the Microsoft Windows Hardware Developer Program](hardware-program-register.md).
 
@@ -19,18 +22,21 @@ This article describes how to sign a driver using attestation signing. For detai
 
 - Follow the process described in [Download kits and tools for Windows 10](/windows-hardware/get-started/adk-install) to download and install the Windows Driver Kit (WDK).
 
-- (Optional)  Download the [echo driver sample](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo/kmdf/driver/AutoSync) that is used in this article.
+- (Optional)  Download the [echo driver sample](https://github.com/Microsoft/Windows-driver-samples/tree/main/general/echo/kmdf/driver/AutoSync) that is used in this article.
 
 
 ### Create the CAB file
 
-In this section, we'll step through the process of creating a CAB files submission.  We'll be using the [echo driver sample](https://github.com/Microsoft/Windows-driver-samples/tree/master/general/echo/kmdf/driver/AutoSync) to illustrate the process.
+In this section, we'll step through the process of creating a CAB files submission.  We'll be using the [echo driver sample](https://github.com/Microsoft/Windows-driver-samples/tree/main/general/echo/kmdf/driver/AutoSync) to illustrate the process.
 
 A typical CAB file submission must contain the following:
 
 - The driver itself, for example Echo.sys
+
 - The driver INF file that is used by the dashboard to facilitate the signing process.
-- The symbol file that is used for debugging information. For example, Echo.pdb.
+
+- The symbol file that is used for debugging information. For example, Echo.pdb. The .pdb file is required for Microsoft's automated crash analysis tools.
+
 - Catalog .CAT files are required and used for company verification only. Microsoft regenerates catalog files and replaces any catalog files that were submitted.
 
 > [!NOTE]
